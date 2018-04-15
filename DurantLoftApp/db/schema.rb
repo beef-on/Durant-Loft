@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180415025313) do
+ActiveRecord::Schema.define(version: 20180415033111) do
 
   create_table "items", force: :cascade do |t|
     t.integer "User_id"
@@ -21,8 +21,8 @@ ActiveRecord::Schema.define(version: 20180415025313) do
   end
 
   create_table "shifts", force: :cascade do |t|
-    t.integer "start"
-    t.integer "end"
+    t.datetime "start"
+    t.datetime "end"
     t.integer "manner1_id"
     t.integer "manner2_id"
     t.integer "manner3_id"
