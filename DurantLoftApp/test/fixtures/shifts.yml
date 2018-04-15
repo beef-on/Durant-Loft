@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start: 1
+  end: 1
+  manner1: one
+  manner2: one
+  manner3: one
+
+two:
+  start: 1
+  end: 1
+  manner1: two
+  manner2: two
+  manner3: two
