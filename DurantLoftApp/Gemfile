@@ -52,3 +52,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # For simple calendar, shift and event planning.
 gem "simple_calendar", "~> 2.0"
+# Devise
+gem 'devise'
