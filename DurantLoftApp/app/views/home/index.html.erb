@@ -1,5 +1,5 @@
 <h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<p>Welcome to eDurantLoft!</p>
 
 
 <!DOCTYPE html>
@@ -35,38 +35,39 @@
 <div class="w3-content w3-padding" style="max-width:1564px">
 
   <!-- Project Section -->
-  <div class="w3-container w3-padding-32" id="projects">
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Projects</h3>
+  <div class="w3-container w3-padding-32" id="leaderboards">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Leaderboards</h3>
   </div>
 
   <div class="w3-row-padding">
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Summer House</div>
+        <div class="w3-display-topleft w3-black w3-padding">DL Bum of the week</div>
         <img src="/w3images/house5.jpg" alt="House" style="width:100%">
       </div>
+      <%= button_to "Guess who it is??(It's not Emmett)", bum_path, :class => "button medium", :method => :patch %>
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Brick House</div>
+        <div class="w3-display-topleft w3-black w3-padding">Cambodia</div>
         <img src="/w3images/house2.jpg" alt="House" style="width:100%">
       </div>
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Renovated</div>
+        <div class="w3-display-topleft w3-black w3-padding">Japan</div>
         <img src="/w3images/house3.jpg" alt="House" style="width:100%">
       </div>
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Barn House</div>
+        <div class="w3-display-topleft w3-black w3-padding">Making this website look nice with no web dev experience RIP</div>
         <img src="/w3images/house4.jpg" alt="House" style="width:100%">
       </div>
     </div>
   </div>
 
-  <div class="w3-row-padding">
+ <!--  <div class="w3-row-padding">
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-display-container">
         <div class="w3-display-topleft w3-black w3-padding">Summer House</div>
@@ -91,14 +92,13 @@
         <img src="/w3images/house3.jpg" alt="House" style="width:99%">
       </div>
     </div>
-  </div>
+  </div> -->
 
   <!-- About Section -->
   <div class="w3-container w3-padding-32" id="about">
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">About</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
-      occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-      laboris nisi ut aliquip ex ea commodo consequat.
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Announcement</h3>
+    <p>DL Week 1 ...... announcements! Hiya DL peeps! WE GOT A NEW WIFIIIIIII. Password's the same tho. 
+      -Joshie(FreshmanKlesis)
     </p>
   </div>
 

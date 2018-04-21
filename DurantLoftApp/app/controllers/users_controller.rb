@@ -7,6 +7,9 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  def bum
+  end
+
   # GET /users/1
   # GET /users/1.json
   def show
@@ -50,6 +53,7 @@ class UsersController < ApplicationController
       end
     end
   end
+
 
   # DELETE /users/1
   # DELETE /users/1.json
