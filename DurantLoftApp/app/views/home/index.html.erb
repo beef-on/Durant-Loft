@@ -1,7 +1,7 @@
 <h1>Home#index</h1>
 <p>Welcome to eDurantLoft!</p>
 <h1>Sign up here</h1>
-<%= button_to "You can sign up as long as you're not Emmett", form_path, :class => "button small", :method => :patch %>
+<%= button_to "Sign up as a user here as long as you're not Emmett", form_path, :class => "button small", :method => :patch %>
 
 
 
@@ -50,27 +50,43 @@
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-display-container">
         <div class="w3-display-topleft w3-black w3-padding">DL Bum of the week</div>
-        <img src="/w3images/house5.jpg" alt="House" style="width:100%">
+        <!-- <img src="/w3images/house5.jpg" alt="House" style="width:100%"> -->
       </div>
+      </br>
+    </br>
+    </br>
       <%= button_to "Guess who it is??(It's not Emmett)", bum_path, :class => "button medium", :method => :patch %>
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Cambodia</div>
-        <img src="/w3images/house2.jpg" alt="House" style="width:100%">
+        <div class="w3-display-topleft w3-black w3-padding">Foosball</div>
+        <!-- <img src="/w3images/house2.jpg" alt="House" style="width:100%"> -->
       </div>
+      </br>
+    </br>
+    </br>
+      <%= button_to "Who's the golfer tonight?!!", foosball_path, :class => "button medium", :method => :patch %>
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Japan</div>
-        <img src="/w3images/house3.jpg" alt="House" style="width:100%">
+        <div class="w3-display-topleft w3-black w3-padding">PingPong</div>
+        <!-- <img src="/w3images/house3.jpg" alt="House" style="width:100%"> -->
       </div>
+      </br>
+    </br>
+    </br>
+      <%= button_to "Who can top spin tonight???", pingpong_path, :class => "button medium", :method => :patch %>
     </div>
+
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Making this website look nice with no web dev experience RIP</div>
-        <img src="/w3images/house4.jpg" alt="House" style="width:100%">
+        <div class="w3-display-topleft w3-black w3-padding">이 메세지를 왜 읽어요??/div>
+        <!-- <img src="/w3images/house4.jpg" alt="House" style="width:100%"> -->
       </div>
+    </br>
+    </br>
+    </br>
+      <%= button_to "The most devotional....", dt_path, :class => "button medium", :method => :patch %>
     </div>
   </div>
 

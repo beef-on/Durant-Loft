@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   patch "home/bum", to: "users#bum", as: "bum"
   patch "home/form", to: "users#new", as: "form"
   get "home/form", to: "users#new"
-
+  patch "home/foosball", to: "home#foosball", as: "foosball"
+  patch "home/pingpong", to: "home#pingpong", as: "pingpong"
+  patch "home/dt", to: "home#dt", as: "dt"
   #Inventory
   #main inventory route
   get "inventory", to: "inventory#index"
