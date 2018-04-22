@@ -32,7 +32,17 @@
   </div>
 
   <div class="field">
-    <%= form.label :admin %>
+    <%= form.label :email %>
+    <%= form.text_field :email, id: :user_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password %>
+    <%= form.text_field :admin, id: :user_encrypted_password %>
+  </div>
+
+  <div class="field">
+    <%= form.label :admin? %>
     <%= form.check_box :admin, id: :user_admin %>
   </div>
 
