@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   patch "home/form", to: "users#new", as: "form"
   get "home/form", to: "users#new"
 
+  patch "home/index", to: "home#index", as: "index"
+  patch "inventory/index", to: "home#index", as: "home"
+
   #Inventory
   #main inventory route
   get "inventory", to: "inventory#index"

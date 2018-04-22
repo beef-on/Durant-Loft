@@ -16,9 +16,11 @@
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar w3-white w3-wide w3-padding w3-card">
-    <a href="#home" class="w3-bar-item w3-button">Home</a>
+    <!--<a href="#home" class="w3-bar-item w3-button">Home</a>-->
+    <%= button_to "Home", index_path, :class => "button large", :method => :patch %>
     <a href="#about" class="w3-bar-item w3-button">About</a>
     <a href="#gracepoint" class="w3-bar-item w3-button">Gracepoint</a>
+
 
     <!-- Float links to the right. Hide them on small screens -->
     <div class="w3-right w3-hide-small">
@@ -31,7 +33,7 @@
 <!-- Header -->
 <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
   <!--<img src="durantloft.jpg" alt="I can't get the image to show">-->
-  <%= image_tag("gracepointlogo.png", :alt => "Durant Loft") %>
+  <%= image_tag("boyband.jpg", :alt => "Durant Loft", size: "1300") %>
   <!--<img class="w3-image" src="/w3images/architect.jpg" alt="Architecture" width="1500" height="800">-->
   <div class="w3-display-middle w3-margin-top w3-center">
     <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>DL</b></span> <span class="w3-hide-small w3-text-light-orange">Citizens</span></h1>
