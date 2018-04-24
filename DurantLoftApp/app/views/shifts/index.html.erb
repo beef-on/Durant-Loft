@@ -30,6 +30,16 @@
   </tbody>
 </table>
 
+<%= month_calendar shifts: @shifts do |date, shifts| %>
+  <%= date %>
+
+  <% shifts.each do |sfhit| %>
+    <div>
+      <%= shift.name %>
+    </div>
+  <% end %>
+<% end %>
+
 <br>
 
 <%= link_to 'New Shift', new_shift_path %>
