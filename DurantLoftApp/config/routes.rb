@@ -8,10 +8,12 @@ Rails.application.routes.draw do
   root to: "home#index"
   get "shifts/new", to: "shifts#new"
   patch "home/bum", to: "users#bum", as: "bum"
+  get "home/inventory", to: "inventory#index", as: "inventory"
+  #patch "home/inventory", to: "inventory#index", as: "inventory"
 
   #Inventory
   #main inventory route
-  get "inventory", to: "inventory#index"
+
   #Add item
   #Permanent Remove
   #Temprorary Remove: set to temporary to True and leave a note of return date

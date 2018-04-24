@@ -13,7 +13,7 @@
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar w3-white w3-wide w3-padding w3-card">
-    <a href="#home" class="w3-bar-item w3-button"><b>BR</b> Architects</a>
+    <a href="#home" class="w3-bar-item w3-button"><b>DL</b> Citizens</a>
     <!-- Float links to the right. Hide them on small screens -->
     <div class="w3-right w3-hide-small">
       <a href="#projects" class="w3-bar-item w3-button">Projects</a>
@@ -25,9 +25,9 @@
 
 <!-- Header -->
 <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
-  <img class="w3-image" src="/w3images/architect.jpg" alt="Architecture" width="1500" height="800">
+  <img class="w3-image" src="app\views\home\DL.jpg" alt="Architecture" width="1500" height="800">
   <div class="w3-display-middle w3-margin-top w3-center">
-    <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>DL</b></span> <span class="w3-hide-small w3-text-light-orange">Citizens</span></h1>
+    <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>DL</b></span> <span class="w3-hide-small w3-text-orange">Citizens</span></h1>
   </div>
 </header>
 
@@ -42,27 +42,30 @@
   <div class="w3-row-padding">
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">DL Bum of the week</div>
-        <img src="/w3images/house5.jpg" alt="House" style="width:100%">
+        <a href="inventory" class="w3-display-topleft w3-button w3-black w3-button">Inventory</a>
+        <img src="https://i.imgur.com/GWEJX06.jpg" alt="House" style="width:100%">
       </div>
-      <%= button_to "Guess who it is??(It's not Emmett)", bum_path, :class => "button medium", :method => :patch %>
+
+
+<!--    <%= button_to "Inventory", inventory_path, :class => "button medium", :method => :patch %> -->
+    </div>
+
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <a href="bum" class="w3-button w3-black w3-button">Manning Schedule</a>
+        <img src="DL.jpg" alt="House" style="width:100%">
+      </div>
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Cambodia</div>
-        <img src="/w3images/house2.jpg" alt="House" style="width:100%">
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">Japan</div>
-        <img src="/w3images/house3.jpg" alt="House" style="width:100%">
+        <a href="bum" class="w3-button w3-black w3-button">Bum of the Week</a>
+        <img src="app\DL.jpg" alt="House" style="width:100%">
       </div>
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-display-container">
         <div class="w3-display-topleft w3-black w3-padding">Making this website look nice with no web dev experience RIP</div>
-        <img src="/w3images/house4.jpg" alt="House" style="width:100%">
+        <img src="https://i.imgur.com/GWEJX06.jpg" alt="House" style="width:100%">
       </div>
     </div>
   </div>
