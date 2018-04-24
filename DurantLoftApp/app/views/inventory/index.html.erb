@@ -6,22 +6,44 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <body>
 
+
   <!-- Navbar (sit on top) -->
   <div class="w3-top">
     <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+
+
+      <!-- <%= button_to "Home", index_path, :class => "button large", :method => :patch %> -->
+
+
       <!--<a href="#home" class="w3-bar-item w3-button">Home</a>-->
       <a href="/" class="w3-bar-item w3-button">Home</a>
+      <a href="#about" class="w3-bar-item w3-button">About</a>
+
+
       <a href="inventory" class="w3-bar-item w3-button">Inventory</a>
-      <a href="/" class="w3-bar-item w3-button">Events [TO DO]</a>
+      <a href="shifts" class="w3-bar-item w3-button">Shifts</a>
+      <a href="http://gracepointonline.org" class="w3-bar-item w3-button">Gracepoint</a>
+      <a href="http://koinberkeley.org" class="w3-bar-item w3-button">Gryffindor!</a>
+      <a href="http://a2fberkeley.org" class="w3-bar-item w3-button">Ravenclaw!</a>
+      <!-- li><%= link_to 'Visit the best group in GP', "http://koinberkeley.org" %></li>
+      <li><%= link_to 'Visit the 2nd best group in GP', "http://a2fberkeley.org" %></li>
+   -->
 
       <!-- Float links to the right. Hide them on small screens -->
       <div class="w3-right w3-hide-small">
           <% if user_signed_in? %>
+            <li><%= link_to 'Edit Your User', edit_user_registration_path %></li>
             <a href="users/edit" class="w3-bar-item w3-button">Edit Your Account</a>
-            <%= link_to 'Log Out', destroy_user_session_path, :method=>'delete' %>
+            <li><%= link_to 'Log Out', destroy_user_session_path, :method=>'delete' %></li>
           <% else %>
-            <a href="users/sign_in" class="w3-bar-item w3-button">Log In</a>
-            <a href="users/sign_up" class="w3-bar-item w3-button">Join Durant Loft</a>
+            <li><%= link_to 'Log In', new_user_session_path %></li>
+            <li><%= link_to 'Sign up', new_user_registration_path %></li>
+            <li><%= link_to 'Log Out', destroy_user_session_path, :method=>'delete' %></li>
+
+            <a href="/users/sign_in" class="w3-button w3-black">Log In</a>
+
+
+
           <% end %>
       </div>
     </div>
@@ -29,12 +51,14 @@
 
   <!-- Header -->
   <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+    <img class="w3-image" src="app\views\home\DL.jpg" alt="Architecture" width="1500" height="800">
+    <!--<img src="durantloft.jpg" alt="I can't get the image to show">-->
+    <!--<img class="w3-image" src="/w3images/architect.jpg" alt="Architecture" width="1500" height="800">-->
     <%= image_tag("DLfrontside.jpg", :alt => "Durant Loft", style: 'height:100%;width:100%;') %>
     <div class="w3-display-middle w3-margin-top w3-center">
       <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>DL</b></span> <span class="w3-hide-small w3-text-orange">Citizens</span></h1>
     </div>
   </header>
-
 
 <!-- Page content -->
 <div class="w3-content w3-padding" style="max-width:1564px">

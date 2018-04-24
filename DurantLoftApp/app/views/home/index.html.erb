@@ -1,9 +1,6 @@
-<<<<<<< HEAD
+
 <!-- <h1>Home#index</h1> -->
-</br>
-</br>
-</br>
-<p>Welcome to eDurantLoft!</p>
+
 <!-- <h1>Sign up here</h1> -->
 
 
@@ -24,16 +21,20 @@
 <div class="w3-top">
   <div class="w3-bar w3-white w3-wide w3-padding w3-card">
 
-    <li><%= link_to 'Home', root_path %></li>
+
     <!-- <%= button_to "Home", index_path, :class => "button large", :method => :patch %> -->
-    <a href="#about" class="w3-bar-item w3-button">About</a>
-    <a href="http://gracepointonline.org" class="w3-bar-item w3-button">Gracepoint</a>
+
+
     <!--<a href="#home" class="w3-bar-item w3-button">Home</a>-->
     <a href="/" class="w3-bar-item w3-button">Home</a>
+    <a href="#about" class="w3-bar-item w3-button">About</a>
+
+
     <a href="inventory" class="w3-bar-item w3-button">Inventory</a>
     <a href="shifts" class="w3-bar-item w3-button">Shifts</a>
-    <a href="http://koinberkeley.org" class="w3-bar-item w3-button">Visit the best group in GP</a>
-    <a href="http://a2fberkeley.org" class="w3-bar-item w3-button">Visit the 2nd best group in GP</a>
+    <a href="http://gracepointonline.org" class="w3-bar-item w3-button">Gracepoint</a>
+    <a href="http://koinberkeley.org" class="w3-bar-item w3-button">Gryffindor!</a>
+    <a href="http://a2fberkeley.org" class="w3-bar-item w3-button">Ravenclaw!</a>
     <!-- li><%= link_to 'Visit the best group in GP', "http://koinberkeley.org" %></li>
     <li><%= link_to 'Visit the 2nd best group in GP', "http://a2fberkeley.org" %></li>
  -->
@@ -46,9 +47,14 @@
           <li><%= link_to 'Log Out', destroy_user_session_path, :method=>'delete' %></li>
         <% else %>
           <li><%= link_to 'Log In', new_user_session_path %></li>
-          <li><%= link_to 'Join Durant Loft', new_user_registration_path %></li>
-          <%= link_to 'Log Out', destroy_user_session_path, :method=>'delete' %>
-        <% end %> 
+          <li><%= link_to 'Sign up', new_user_registration_path %></li>
+          <li><%= link_to 'Log Out', destroy_user_session_path, :method=>'delete' %></li>
+
+          <a href="/users/sign_in" class="w3-button w3-black">Log In</a>
+
+
+
+        <% end %>
     </div>
   </div>
 </div>
@@ -180,7 +186,7 @@
 
     </form>
   </div>
-   
+
 
 <!-- End page content -->
 </div>
