@@ -1,7 +1,8 @@
 <h1>Home#index</h1>
 <p>Welcome to eDurantLoft!</p>
 
-
+<!-- <%= button_to "You can sign up as long as you're not Emmett", form_path, :class => "button small", :method => :patch %>
+-->
 <!DOCTYPE html>
 <html>
 <title>W3.CSS Template</title>
@@ -13,19 +14,33 @@
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar w3-white w3-wide w3-padding w3-card">
-    <a href="#home" class="w3-bar-item w3-button"><b>DL</b> Citizens</a>
+    <!--<a href="#home" class="w3-bar-item w3-button">Home</a>-->
+    <%= button_to "Home", index_path, :class => "button large", :method => :patch %>
+    <a href="#about" class="w3-bar-item w3-button">About</a>
+    <a href="#gracepoint" class="w3-bar-item w3-button">Gracepoint</a>
+
     <!-- Float links to the right. Hide them on small screens -->
     <div class="w3-right w3-hide-small">
-      <a href="#projects" class="w3-bar-item w3-button">Projects</a>
-      <a href="#about" class="w3-bar-item w3-button">About</a>
-      <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+        <% if user_signed_in? %>
+          <li><%= link_to 'Edit Your User', edit_trainer_registration_path %></li>
+          <li><%= link_to 'Log Out', destroy_trainer_session_path, :method=>'delete' %></li>
+        <% else %>
+          <li><%= link_to 'Log In', new_trainer_session_path %></li>
+          <li><%= link_to 'Join Durant Loft', new_trainer_registration_path %></li>
+        <% end %>
     </div>
   </div>
 </div>
 
 <!-- Header -->
 <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+<<<<<<< HEAD
   <img class="w3-image" src="app\views\home\DL.jpg" alt="Architecture" width="1500" height="800">
+=======
+  <!--<img src="durantloft.jpg" alt="I can't get the image to show">-->
+  <%= image_tag("boyband.jpg", :alt => "Durant Loft", size: "1300") %>
+  <!--<img class="w3-image" src="/w3images/architect.jpg" alt="Architecture" width="1500" height="800">-->
+>>>>>>> 9fe71d6c6004d5c708549c9c46263877b44e9c78
   <div class="w3-display-middle w3-margin-top w3-center">
     <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>DL</b></span> <span class="w3-hide-small w3-text-orange">Citizens</span></h1>
   </div>

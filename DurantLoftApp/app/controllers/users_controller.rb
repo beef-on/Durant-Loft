@@ -10,6 +10,10 @@ class UsersController < ApplicationController
   def bum
   end
 
+  def form
+  end
+
+
   # GET /users/1
   # GET /users/1.json
   def show
@@ -17,7 +21,7 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
-    @user = User.new
+    @user = User.new user_params
   end
 
   # GET /users/1/edit
@@ -28,7 +32,6 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }
@@ -72,7 +75,9 @@ class UsersController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
+    #removed "require(:user)" for now
+    #may add two params, email and encrypted_password
     def user_params
-      params.require(:user).permit(:firstName, :lastName, :year, :manner, :admin)
+      params.permit(:firstName, :lastName, :year, :manner, :admin)
     end
 end
