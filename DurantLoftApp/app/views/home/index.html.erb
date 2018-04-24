@@ -28,24 +28,25 @@
     <!-- <%= button_to "Home", index_path, :class => "button large", :method => :patch %> -->
     <a href="#about" class="w3-bar-item w3-button">About</a>
     <a href="http://gracepointonline.org" class="w3-bar-item w3-button">Gracepoint</a>
-    <li><%= link_to 'Visit the best group in GP', "http://koinberkeley.org" %></li>
-    <li><%= link_to 'Visit the 2nd best group in GP', "http://a2fberkeley.org" %></li>
-
     <!--<a href="#home" class="w3-bar-item w3-button">Home</a>-->
     <a href="/" class="w3-bar-item w3-button">Home</a>
     <a href="inventory" class="w3-bar-item w3-button">Inventory</a>
     <a href="shifts" class="w3-bar-item w3-button">Shifts</a>
-
+    <a href="http://koinberkeley.org" class="w3-bar-item w3-button">Visit the best group in GP</a>
+    <a href="http://a2fberkeley.org" class="w3-bar-item w3-button">Visit the 2nd best group in GP</a>
+    <!-- li><%= link_to 'Visit the best group in GP', "http://koinberkeley.org" %></li>
+    <li><%= link_to 'Visit the 2nd best group in GP', "http://a2fberkeley.org" %></li>
+ -->
 
     <!-- Float links to the right. Hide them on small screens -->
     <div class="w3-right w3-hide-small">
         <% if user_signed_in? %>
           <li><%= link_to 'Edit Your User', edit_user_registration_path %></li>
+          <a href="users/edit" class="w3-bar-item w3-button">Edit Your Account</a>
           <li><%= link_to 'Log Out', destroy_user_session_path, :method=>'delete' %></li>
         <% else %>
           <li><%= link_to 'Log In', new_user_session_path %></li>
           <li><%= link_to 'Join Durant Loft', new_user_registration_path %></li>
-          <a href="users/edit" class="w3-bar-item w3-button">Edit Your Account</a>
           <%= link_to 'Log Out', destroy_user_session_path, :method=>'delete' %>
         <% end %> 
     </div>
@@ -56,7 +57,6 @@
 <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
   <img class="w3-image" src="app\views\home\DL.jpg" alt="Architecture" width="1500" height="800">
   <!--<img src="durantloft.jpg" alt="I can't get the image to show">-->
-  <%= image_tag("boyband.jpg", :alt => "Durant Loft", size: "1300") %>
   <!--<img class="w3-image" src="/w3images/architect.jpg" alt="Architecture" width="1500" height="800">-->
   <%= image_tag("DLfrontside.jpg", :alt => "Durant Loft", style: 'height:100%;width:100%;') %>
   <div class="w3-display-middle w3-margin-top w3-center">
@@ -168,18 +168,19 @@
   <!-- Contact Section -->
   <div class="w3-container w3-padding-32" id="contact">
     <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Contact</h3>
-    <p>Lets get in touch and talk about your next project.</p>
+    <p>Want to know more about GP? Don't be afraid to contact!</p>
     <form action="/action_page.php" target="_blank">
       <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
       <input class="w3-input w3-section w3-border" type="text" placeholder="Email" required name="Email">
       <input class="w3-input w3-section w3-border" type="text" placeholder="Subject" required name="Subject">
       <input class="w3-input w3-section w3-border" type="text" placeholder="Comment" required name="Comment">
       <button class="w3-button w3-black w3-section" type="submit">
-        <i class="fa fa-paper-plane"></i> Aloha snackbar
+        <i class="fa fa-paper-plane"></i> Send
       </button>
 
     </form>
   </div>
+   
 
 <!-- End page content -->
 </div>
