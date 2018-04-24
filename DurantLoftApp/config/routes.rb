@@ -14,15 +14,23 @@ Rails.application.routes.draw do
   patch "home/foosball", to: "home#foosball", as: "foosball"
   patch "home/pingpong", to: "home#pingpong", as: "pingpong"
   patch "home/dt", to: "home#dt", as: "dt"
+  # get "/koinberkeley.org", to: "koinberkeley.org"
 # =======
 
   patch "home/index", to: "home#index", as: "index"
-  patch "inventory/index", to: "home#index", as: "home"
 
+# <<<<<<< HEAD
 # >>>>>>> 431158230486fa1e1e4816bf85e52e232fdd9211
+# =======
+
+  
+  patch "inventory/index", to: "home#index", as: "home"
+  get "home/inventory", to: "inventory#index", as: "inventory"
+  #patch "home/inventory", to: "inventory#index", as: "inventory"
+# >>>>>>> 996309656c7066ad2f4e5cc7259f8a3b11fddc0d
   #Inventory
   #main inventory route
-  get "inventory", to: "inventory#index"
+
   #Add item
   #Permanent Remove
   #Temprorary Remove: set to temporary to True and leave a note of return date

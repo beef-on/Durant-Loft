@@ -13,6 +13,11 @@ class UsersController < ApplicationController
   def form
   end
 
+  # def manner
+  #   @user.manner
+  # end
+
+
 
   # GET /users/1
   # GET /users/1.json

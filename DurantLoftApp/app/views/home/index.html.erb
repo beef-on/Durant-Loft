@@ -1,10 +1,15 @@
-<h1>Home#index</h1>
+<!-- <h1>Home#index</h1> -->
+</br>
+</br>
+</br>
 <p>Welcome to eDurantLoft!</p>
-<h1>Sign up here</h1>
-<%= button_to "Sign up as a user here as long as you're not Emmett", form_path, :class => "button small", :method => :patch %>
+<!-- <h1>Sign up here</h1> -->
 
 
+<!-- <%= button_to "Sign up as a user here as long as you're not Emmett", form_path, :class => "button small", :method => :patch%> -->
 
+<!-- <%= button_to "You can sign up as long as you're not Emmett", form_path, :class => "button small", :method => :patch %>
+-->
 <!DOCTYPE html>
 <html>
 <title>W3.CSS Template</title>
@@ -16,27 +21,34 @@
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar w3-white w3-wide w3-padding w3-card">
-    <!--<a href="#home" class="w3-bar-item w3-button">Home</a>-->
-    <%= button_to "Home", index_path, :class => "button large", :method => :patch %>
+    <li><%= link_to 'Home', root_path %></li>
+    <!-- <%= button_to "Home", index_path, :class => "button large", :method => :patch %> -->
     <a href="#about" class="w3-bar-item w3-button">About</a>
-    <a href="#gracepoint" class="w3-bar-item w3-button">Gracepoint</a>
-
+    <a href="http://gracepointonline.org" class="w3-bar-item w3-button">Gracepoint</a>
+    <li><%= link_to 'Visit the best group in GP', "http://koinberkeley.org" %></li>
+    <li><%= link_to 'Visit the 2nd best group in GP', "http://a2fberkeley.org" %></li>
 
     <!-- Float links to the right. Hide them on small screens -->
     <div class="w3-right w3-hide-small">
-      <a href="#login" class="w3-bar-item w3-button">Log In</a>
-      <a href="#signup" class="w3-bar-item w3-button">Sign Up</a>
+        <% if user_signed_in? %>
+          <li><%= link_to 'Edit Your User', edit_user_registration_path %></li>
+          <li><%= link_to 'Log Out', destroy_user_session_path, :method=>'delete' %></li>
+        <% else %>
+          <li><%= link_to 'Log In', new_user_session_path %></li>
+          <li><%= link_to 'Join Durant Loft', new_user_registration_path %></li>
+        <% end %>
     </div>
   </div>
 </div>
 
 <!-- Header -->
 <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+  <img class="w3-image" src="app\views\home\DL.jpg" alt="Architecture" width="1500" height="800">
   <!--<img src="durantloft.jpg" alt="I can't get the image to show">-->
   <%= image_tag("boyband.jpg", :alt => "Durant Loft", size: "1300") %>
   <!--<img class="w3-image" src="/w3images/architect.jpg" alt="Architecture" width="1500" height="800">-->
   <div class="w3-display-middle w3-margin-top w3-center">
-    <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>DL</b></span> <span class="w3-hide-small w3-text-light-orange">Citizens</span></h1>
+    <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>DL</b></span> <span class="w3-hide-small w3-text-orange">Citizens</span></h1>
   </div>
 </header>
 
@@ -58,11 +70,15 @@
     </br>
     </br>
       <%= button_to "Guess who it is??(It's not Emmett)", bum_path, :class => "button medium", :method => :patch %>
+        <a href="inventory" class="w3-display-topleft w3-button w3-black w3-button">Inventory</a>
+        <!-- <img src="https://i.imgur.com/GWEJX06.jpg" alt="House" style="width:100%"> -->
+      </div>
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-display-container">
         <div class="w3-display-topleft w3-black w3-padding">Foosball</div>
         <!-- <img src="/w3images/house2.jpg" alt="House" style="width:100%"> -->
+        <!-- <img src="DL.jpg" alt="House" style="width:100%"> -->
       </div>
       </br>
     </br>
@@ -73,17 +89,20 @@
       <div class="w3-display-container">
         <div class="w3-display-topleft w3-black w3-padding">PingPong</div>
         <!-- <img src="/w3images/house3.jpg" alt="House" style="width:100%"> -->
+        <!-- <a href="bum" class="w3-button w3-black w3-button">Bum of the Week</a> -->
+        <!-- <img src="app\DL.jpg" alt="House" style="width:100%"> -->
       </div>
-      </br>
+    </br>
     </br>
     </br>
       <%= button_to "Who can top spin tonight???", pingpong_path, :class => "button medium", :method => :patch %>
     </div>
-
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">이 메세지를 왜 읽어요??/div>
+        <div class="w3-display-topleft w3-black w3-padding">Most DT's in a week??</div>
         <!-- <img src="/w3images/house4.jpg" alt="House" style="width:100%"> -->
+        <!-- <div class="w3-display-topleft w3-black w3-padding">Making this website look nice with no web dev experience RIP</div> -->
+        <!-- <img src="https://i.imgur.com/GWEJX06.jpg" alt="House" style="width:100%"> -->
       </div>
     </br>
     </br>
@@ -92,6 +111,8 @@
     </div>
   </div>
 
+  <a href="bum" class="w3-button w3-black w3-button">Manning Schedule</a>
+<!--    <%= button_to "Inventory", inventory_path, :class => "button medium", :method => :patch %> -->
  <!--  <div class="w3-row-padding">
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-display-container">
