@@ -10,18 +10,18 @@
 <div class="w3-top">
   <div class="w3-bar w3-white w3-wide w3-padding w3-card">
     <!--<a href="#home" class="w3-bar-item w3-button">Home</a>-->
-    <li class='w3-bar-item w3-button'><%= link_to 'Home', root_path %></li>
-    <li class='w3-bar-item w3-button'><%= link_to 'Inventory', inventory_path %></li>
-    <li class='w3-bar-item w3-button'><%= link_to 'Events [TO DO]', root_path %></li>
+    <a href="/" class="w3-bar-item w3-button">Home</a>
+    <a href="inventory" class="w3-bar-item w3-button">Inventory</a>
+    <a href="/" class="w3-bar-item w3-button">Events [TO DO]</a>
 
     <!-- Float links to the right. Hide them on small screens -->
     <div class="w3-right w3-hide-small">
         <% if user_signed_in? %>
-          <li class='w3-bar-item w3-button'><%= link_to 'Edit Your User', edit_user_registration_path %></li>
-          <li class='w3-bar-item w3-button'><%= link_to 'Log Out', destroy_user_session_path, :method=>'delete' %></li>
+          <a href="users/edit" class="w3-bar-item w3-button">Edit Your Accounts</a>
+          <li><%= link_to 'Log Out', destroy_user_session_path, :method=>'delete' %></li>
         <% else %>
-          <li class='w3-bar-item w3-button'><%= link_to 'Log In', new_user_session_path %></li>
-          <li class='w3-bar-item w3-button'><%= link_to 'Join Durant Loft', new_user_registration_path %></li>
+          <a href="users/sign_in" class="w3-bar-item w3-button">Log In</a>
+          <a href="users/sign_up" class="w3-bar-item w3-button">Join Durant Loft</a>
         <% end %>
     </div>
   </div>
