@@ -50,7 +50,6 @@
           <li><%= link_to 'Sign up', new_user_registration_path %></li>
           <li><%= link_to 'Log Out', destroy_user_session_path, :method=>'delete' %></li>
 
-          <a href="/users/sign_in" class="w3-button w3-black">Log In</a>
 
 
 
@@ -74,38 +73,38 @@
 <div class="w3-content w3-padding" style="max-width:1564px">
 
   <!-- Project Section -->
+  <!--
   <div class="w3-container w3-padding-32" id="leaderboards">
     <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Leaderboards</h3>
   </div>
-
+-->
   <div class="w3-row-padding">
     <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">DL Bum of the week</div>
-        <!-- <img src="/w3images/house5.jpg" alt="House" style="width:100%"> -->
-      </div>
+
       </br>
     </br>
     </br>
-      <%= button_to "Guess who it is??(It's not Emmett)", bum_path, :class => "button medium", :method => :patch %>
-        <a href="inventory" class="w3-display-topleft w3-button w3-black w3-button">Inventory</a>
-        <!-- <img src="https://i.imgur.com/GWEJX06.jpg" alt="House" style="width:100%"> -->
+
       </div>
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-display-container">
+
         <div class="w3-display-topleft w3-black w3-padding">Foosball</div>
+
+        <a href="inventory" class="w3-display-topleft w3-button w3-black w3-button">Inventory</a>
+        <a href="home/pingpong" class="w3-display-topleft w3-button w3-black w3-button">Ping Pong</a>
         <!-- <img src="/w3images/house2.jpg" alt="House" style="width:100%"> -->
         <!-- <img src="DL.jpg" alt="House" style="width:100%"> -->
       </div>
       </br>
     </br>
     </br>
-      <%= button_to "Who's the golfer tonight?!!", foosball_path, :class => "button medium", :method => :patch %>
+
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">PingPong</div>
+        <a href="inventory" class="w3-display-topleft w3-button w3-black w3-button">Inventory</a>
         <!-- <img src="/w3images/house3.jpg" alt="House" style="width:100%"> -->
         <!-- <a href="bum" class="w3-button w3-black w3-button">Bum of the Week</a> -->
         <!-- <img src="app\DL.jpg" alt="House" style="width:100%"> -->
@@ -113,7 +112,7 @@
     </br>
     </br>
     </br>
-      <%= button_to "Who can top spin tonight???", pingpong_path, :class => "button medium", :method => :patch %>
+      <!-- <%= button_to "Who can top spin tonight???", pingpong_path, :class => "button medium", :method => :patch %> -->
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-display-container">
