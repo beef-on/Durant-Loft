@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :users
   root to: "home#index"
   get "shifts/new", to: "shifts#new"
+
   patch "home/bum", to: "users#bum", as: "bum"
   patch "home/form", to: "users#new", as: "form"
   get "home/form", to: "users#new"
@@ -14,18 +15,27 @@ Rails.application.routes.draw do
   patch "home/foosball", to: "home#foosball", as: "foosball"
   patch "home/pingpong", to: "home#pingpong", as: "pingpong"
   patch "home/dt", to: "home#dt", as: "dt"
+
+  # ----
   # get "/koinberkeley.org", to: "koinberkeley.org"
 # =======
 
-  patch "home/index", to: "home#index", as: "index"
+  # patch "bum", to: "users#bum", as: "bum"
+  # patch "form", to: "users#new", as: "form"
+  # get "form", to: "users#new"
+
+
+  patch "index", to: "home#index", as: "index"
+
 
 # <<<<<<< HEAD
 # >>>>>>> 431158230486fa1e1e4816bf85e52e232fdd9211
 # =======
 
   
+
   patch "inventory/index", to: "home#index", as: "home"
-  get "home/inventory", to: "inventory#index", as: "inventory"
+  get "inventory", to: "inventory#index", as: "inventory"
   #patch "home/inventory", to: "inventory#index", as: "inventory"
 # >>>>>>> 996309656c7066ad2f4e5cc7259f8a3b11fddc0d
   #Inventory

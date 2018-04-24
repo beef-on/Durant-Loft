@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!-- <h1>Home#index</h1> -->
 </br>
 </br>
@@ -10,6 +11,7 @@
 
 <!-- <%= button_to "You can sign up as long as you're not Emmett", form_path, :class => "button small", :method => :patch %>
 -->
+
 <!DOCTYPE html>
 <html>
 <title>W3.CSS Template</title>
@@ -21,12 +23,19 @@
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+
     <li><%= link_to 'Home', root_path %></li>
     <!-- <%= button_to "Home", index_path, :class => "button large", :method => :patch %> -->
     <a href="#about" class="w3-bar-item w3-button">About</a>
     <a href="http://gracepointonline.org" class="w3-bar-item w3-button">Gracepoint</a>
     <li><%= link_to 'Visit the best group in GP', "http://koinberkeley.org" %></li>
     <li><%= link_to 'Visit the 2nd best group in GP', "http://a2fberkeley.org" %></li>
+
+    <!--<a href="#home" class="w3-bar-item w3-button">Home</a>-->
+    <a href="/" class="w3-bar-item w3-button">Home</a>
+    <a href="inventory" class="w3-bar-item w3-button">Inventory</a>
+    <a href="/" class="w3-bar-item w3-button">Events [TO DO]</a>
+
 
     <!-- Float links to the right. Hide them on small screens -->
     <div class="w3-right w3-hide-small">
@@ -36,7 +45,9 @@
         <% else %>
           <li><%= link_to 'Log In', new_user_session_path %></li>
           <li><%= link_to 'Join Durant Loft', new_user_registration_path %></li>
-        <% end %>
+          <a href="users/edit" class="w3-bar-item w3-button">Edit Your Account</a>
+          <%= link_to 'Log Out', destroy_user_session_path, :method=>'delete' %>
+        <% end %> 
     </div>
   </div>
 </div>
@@ -47,6 +58,7 @@
   <!--<img src="durantloft.jpg" alt="I can't get the image to show">-->
   <%= image_tag("boyband.jpg", :alt => "Durant Loft", size: "1300") %>
   <!--<img class="w3-image" src="/w3images/architect.jpg" alt="Architecture" width="1500" height="800">-->
+  <%= image_tag("DLfrontside.jpg", :alt => "Durant Loft", style: 'height:100%;width:100%;') %>
   <div class="w3-display-middle w3-margin-top w3-center">
     <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>DL</b></span> <span class="w3-hide-small w3-text-orange">Citizens</span></h1>
   </div>
@@ -140,43 +152,17 @@
     </div>
   </div> -->
 
+
+
+<!-- Page content -->
+<div class="w3-content w3-padding" style="max-width:1564px">
+
   <!-- About Section -->
   <div class="w3-container w3-padding-32" id="about">
     <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Announcement</h3>
     <p>DL Week 1 ...... announcements! Hiya DL peeps! WE GOT A NEW WIFIIIIIII. Password's the same tho.
       -Joshie(FreshmanKlesis)
     </p>
-  </div>
-
-  <div class="w3-row-padding w3-grayscale">
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <img src="/w3images/team2.jpg" alt="John" style="width:100%">
-      <h3>John Doe</h3>
-      <p class="w3-opacity">CEO & Founder</p>
-      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-      <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <img src="/w3images/team1.jpg" alt="Jane" style="width:100%">
-      <h3>Jane Doe</h3>
-      <p class="w3-opacity">Architect</p>
-      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-      <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <img src="/w3images/team3.jpg" alt="Mike" style="width:100%">
-      <h3>Mike Ross</h3>
-      <p class="w3-opacity">Architect</p>
-      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-      <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <img src="/w3images/team4.jpg" alt="Dan" style="width:100%">
-      <h3>Dan Star</h3>
-      <p class="w3-opacity">Architect</p>
-      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-      <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
-    </div>
   </div>
 
   <!-- Contact Section -->
