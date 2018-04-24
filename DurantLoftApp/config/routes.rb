@@ -7,16 +7,14 @@ Rails.application.routes.draw do
   resources :users
   root to: "home#index"
   get "shifts/new", to: "shifts#new"
-  patch "home/bum", to: "users#bum", as: "bum"
-  patch "home/form", to: "users#new", as: "form"
-  get "home/form", to: "users#new"
+  patch "bum", to: "users#bum", as: "bum"
+  patch "form", to: "users#new", as: "form"
+  get "form", to: "users#new"
 
-  patch "home/index", to: "home#index", as: "index"
+  patch "index", to: "home#index", as: "index"
 
-
-  
   patch "inventory/index", to: "home#index", as: "home"
-  get "home/inventory", to: "inventory#index", as: "inventory"
+  get "inventory", to: "inventory#index", as: "inventory"
   #patch "home/inventory", to: "inventory#index", as: "inventory"
   #Inventory
   #main inventory route
