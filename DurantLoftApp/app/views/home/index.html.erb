@@ -1,12 +1,6 @@
 <h1>Home#index</h1>
 <p>Welcome to eDurantLoft!</p>
-<% if user_signed_in? %>
-  <li><%= link_to 'Edit Your User', edit_trainer_registration_path %></li>
-  <li><%= link_to 'Log Out', destroy_trainer_session_path, :method=>'delete' %></li>
-<% else %>
-  <li><%= link_to 'Log In', new_trainer_session_path %></li>
-  <li><%= link_to 'Join Durant Loft', new_trainer_registration_path %></li>
-<% end %>
+
 <!-- <%= button_to "You can sign up as long as you're not Emmett", form_path, :class => "button small", :method => :patch %>
 -->
 <!DOCTYPE html>
@@ -25,11 +19,15 @@
     <a href="#about" class="w3-bar-item w3-button">About</a>
     <a href="#gracepoint" class="w3-bar-item w3-button">Gracepoint</a>
 
-
     <!-- Float links to the right. Hide them on small screens -->
     <div class="w3-right w3-hide-small">
-      <a href="#login" class="w3-bar-item w3-button">Log In</a>
-      <a href="#signup" class="w3-bar-item w3-button">Sign Up</a>
+        <% if user_signed_in? %>
+          <li><%= link_to 'Edit Your User', edit_trainer_registration_path %></li>
+          <li><%= link_to 'Log Out', destroy_trainer_session_path, :method=>'delete' %></li>
+        <% else %>
+          <li><%= link_to 'Log In', new_trainer_session_path %></li>
+          <li><%= link_to 'Join Durant Loft', new_trainer_registration_path %></li>
+        <% end %>
     </div>
   </div>
 </div>
