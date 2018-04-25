@@ -30,12 +30,12 @@
   </tbody>
 </table>
 
-<%= month_calendar shifts: @shifts do |date, shifts| %>
+<%= month_calendar events: @shifts do |date, shifts| %>
   <%= date %>
 
-  <% shifts.each do |sfhit| %>
+  <% shifts.each do |shift| %>
     <div>
-      <%= shift.name %>
+      <%= shift.manner1 %>
     </div>
   <% end %>
 <% end %>

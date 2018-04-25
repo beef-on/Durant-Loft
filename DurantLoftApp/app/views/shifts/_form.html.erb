@@ -12,28 +12,28 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :start %>
+    <%= form.label :start_time %>
     <%= form.datetime_select :start, id: :shift_start %>
   </div>
 
   <div class="field">
-    <%= form.label :end %>
+    <%= form.label :end_time %>
     <%= form.datetime_select :end, id: :shift_end %>
   </div>
 
   <div class="field">
     <%= form.label :manner1_id %>
-    <%= form.text_field :manner1_id, id: :shift_manner1_id %>
+    <%= form.collection_select :shift, User.all, :id, :firstName, include_blank: true %>
   </div>
 
   <div class="field">
     <%= form.label :manner2_id %>
-    <%= form.text_field :manner2_id, id: :shift_manner2_id %>
+    <%= form.collection_select :shift, User.all, :id, :firstName, include_blank: true %>
   </div>
 
   <div class="field">
     <%= form.label :manner3_id %>
-    <%= form.text_field :manner3_id, id: :shift_manner3_id %>
+    <%= form.collection_select :shift, User.all, :id, :firstName, include_blank: true %>
   </div>
 
   <div class="actions">
