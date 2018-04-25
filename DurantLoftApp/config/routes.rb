@@ -11,11 +11,16 @@ Rails.application.routes.draw do
   patch "home/bum", to: "users#bum", as: "bum"
   patch "home/form", to: "users#new", as: "form"
   get "home/form", to: "users#new"
-# <<<<<<< HEAD
   patch "home/foosball", to: "home#foosball", as: "foosball"
   patch "home/pingpong", to: "home#pingpong", as: "pingpong"
   patch "home/dt", to: "home#dt", as: "dt"
 
+  #post "inventory/add_item", to: "inventory#new", as: "new"
+  #post "add_item", to: "inventory#new", as: "new"
+  #get "/items/new" to: "items#new"
+  post "inventory/new", to: "items#create", as: "create_item"
+  delete "inventory/remove", to: "items#destroy", as: "destroy_item"
+  #get "inventory/remove", to: "item#destroy", as: "destroy_item"
   # ----
   # get "/koinberkeley.org", to: "koinberkeley.org"
 # =======
@@ -32,7 +37,7 @@ Rails.application.routes.draw do
 # >>>>>>> 431158230486fa1e1e4816bf85e52e232fdd9211
 # =======
 
-  
+
 
   patch "inventory/index", to: "home#index", as: "home"
   get "inventory", to: "inventory#index", as: "inventory"
@@ -46,4 +51,4 @@ Rails.application.routes.draw do
   #Temprorary Remove: set to temporary to True and leave a note of return date
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-end 
+end
