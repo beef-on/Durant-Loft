@@ -23,43 +23,32 @@
 
 
     <!-- <%= button_to "Home", index_path, :class => "button large", :method => :patch %> -->
-
-
     <!--<a href="#home" class="w3-bar-item w3-button">Home</a>-->
-    <a href="/" class="w3-bar-item w3-button">Home</a>
-    <a href="#about" class="w3-bar-item w3-button">About</a>
-
-
-    <a href="inventory" class="w3-bar-item w3-button">Inventory</a>
-    <a href="shifts" class="w3-bar-item w3-button">Shifts</a>
-    <a href="http://gracepointonline.org" class="w3-bar-item w3-button">Gracepoint</a>
-    <a href="http://koinberkeley.org" class="w3-bar-item w3-button">Gryffindor!</a>
-    <a href="http://a2fberkeley.org" class="w3-bar-item w3-button">Ravenclaw!</a>
-
-    <% if user_signed_in? %>
-      <% if user.manner or user.admin %>
-        <a href="security" class="w3-bar-item w3-button">Security</a>
-    <% end %>
-    <% end %>
-    
-
     <!-- li><%= link_to 'Visit the best group in GP', "http://koinberkeley.org" %></li>
     <li><%= link_to 'Visit the 2nd best group in GP', "http://a2fberkeley.org" %></li>
  -->
 
+    <%= link_to 'Home', root_path, class: "w3-bar-item w3-button" %>
+    <%= link_to 'Inventory', inventory_path, class: "w3-bar-item w3-button" %>
+    <%= link_to 'Shifts', shifts_path, class: "w3-bar-item w3-button" %>
+    <%= link_to 'Gracepoint', "http://gracepointonline.org", class: "w3-bar-item w3-button" %>
+    <%= link_to 'Koinonia', "http://koinberkeley.org", class: "w3-bar-item w3-button" %>
+    <%= link_to 'a2f', "http://a2fberkeley.org", class: "w3-bar-item w3-button" %>
+
+     <% if user_signed_in? %>
+      <% if user.manner or user.admin %>
+        <a href="security" class="w3-bar-item w3-button">Security</a>
+      <% end %>
+    <% end %>
+
     <!-- Float links to the right. Hide them on small screens -->
     <div class="w3-right w3-hide-small">
         <% if user_signed_in? %>
-          <li><%= link_to 'Edit Your User', edit_user_registration_path %></li>
-          <a href="users/edit" class="w3-bar-item w3-button">Edit Your Account</a>
-          <li><%= link_to 'Log Out', destroy_user_session_path, :method=>'delete' %></li>
+          <%= link_to 'Edit Your User', edit_user_registration_path, class: "w3-bar-item w3-button" %>
+          <%= link_to 'Log Out', destroy_user_session_path, class: "w3-bar-item w3-button", :method=>'delete' %><
         <% else %>
-          <li><%= link_to 'Log In', new_user_session_path %></li>
-          <li><%= link_to 'Sign up', new_user_registration_path %></li>
-
-
-
-
+          <%= link_to 'Log In', new_user_session_path, class: "w3-bar-item w3-button" %>
+          <%= link_to 'Sign up', new_user_registration_path, class: "w3-bar-item w3-button" %>
         <% end %>
     </div>
   </div>

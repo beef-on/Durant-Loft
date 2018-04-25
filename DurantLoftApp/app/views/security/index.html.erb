@@ -6,52 +6,42 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <body>
 
-
-  <!-- Navbar (sit on top) -->
-  <div class="w3-top">
-    <div class="w3-bar w3-white w3-wide w3-padding w3-card">
-
-
-      <!-- <%= button_to "Home", index_path, :class => "button large", :method => :patch %> -->
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
 
 
-      <!--<a href="#home" class="w3-bar-item w3-button">Home</a>-->
-      <a href="/" class="w3-bar-item w3-button">Home</a>
-      <a href="#about" class="w3-bar-item w3-button">About</a>
+    <!-- <%= button_to "Home", index_path, :class => "button large", :method => :patch %> -->
+    <!--<a href="#home" class="w3-bar-item w3-button">Home</a>-->
+    <!-- li><%= link_to 'Visit the best group in GP', "http://koinberkeley.org" %></li>
+    <li><%= link_to 'Visit the 2nd best group in GP', "http://a2fberkeley.org" %></li>
+ -->
 
+    <%= link_to 'Home', root_path, class: "w3-bar-item w3-button" %>
+    <%= link_to 'Inventory', inventory_path, class: "w3-bar-item w3-button" %>
+    <%= link_to 'Shifts', shifts_path, class: "w3-bar-item w3-button" %>
+    <%= link_to 'Gracepoint', "http://gracepointonline.org", class: "w3-bar-item w3-button" %>
+    <%= link_to 'Koinonia', "http://koinberkeley.org", class: "w3-bar-item w3-button" %>
+    <%= link_to 'a2f', "http://a2fberkeley.org", class: "w3-bar-item w3-button" %>
 
-      <a href="inventory" class="w3-bar-item w3-button">Inventory</a>
-      <a href="shifts" class="w3-bar-item w3-button">Shifts</a>
-      <a href="http://gracepointonline.org" class="w3-bar-item w3-button">Gracepoint</a>
-      <a href="http://koinberkeley.org" class="w3-bar-item w3-button">Gryffindor!</a>
-      <a href="http://a2fberkeley.org" class="w3-bar-item w3-button">Ravenclaw!</a>
-
-      <% if user_signed_in? %>
-        <% if user.manner or user.admin %>
-          <a href="security" class="w3-bar-item w3-button">Security</a>
+     <% if user_signed_in? %>
+      <% if user.manner or user.admin %>
+        <a href="security" class="w3-bar-item w3-button">Security</a>
       <% end %>
-      <% end %>
+    <% end %>
 
-
-      <!-- li><%= link_to 'Visit the best group in GP', "http://koinberkeley.org" %></li>
-      <li><%= link_to 'Visit the 2nd best group in GP', "http://a2fberkeley.org" %></li>
-   -->
-
-      <!-- Float links to the right. Hide them on small screens -->
-      <div class="w3-right w3-hide-small">
-          <% if user_signed_in? %>
-            <li><%= link_to 'Edit Your User', edit_user_registration_path %></li>
-            <a href="users/edit" class="w3-bar-item w3-button">Edit Your Account</a>
-            <li><%= link_to 'Log Out', destroy_user_session_path, :method=>'delete' %></li>
-          <% else %>
-            <li><%= link_to 'Log In', new_user_session_path %></li>
-            <li><%= link_to 'Sign up', new_user_registration_path %></li>
-
-
-          <% end %>
-      </div>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+        <% if user_signed_in? %>
+          <%= link_to 'Edit Your User', edit_user_registration_path, class: "w3-bar-item w3-button" %>
+          <%= link_to 'Log Out', destroy_user_session_path, class: "w3-bar-item w3-button", :method=>'delete' %><
+        <% else %>
+          <%= link_to 'Log In', new_user_session_path, class: "w3-bar-item w3-button" %>
+          <%= link_to 'Sign up', new_user_registration_path, class: "w3-bar-item w3-button" %>
+        <% end %>
     </div>
   </div>
+</div>
 
   <!-- Header -->
   <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">

@@ -17,8 +17,6 @@ class UsersController < ApplicationController
   #   @user.manner
   # end
 
-
-
   # GET /users/1
   # GET /users/1.json
   def show
