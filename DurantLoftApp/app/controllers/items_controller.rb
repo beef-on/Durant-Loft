@@ -27,17 +27,21 @@ class ItemsController < ApplicationController
 
   # POST /items
   # POST /items.json
+  #(item_params)
   def create
-    @item = Item.new(item_params)
+    @item = Item.new
+    @item.name = params[:name]
+    @item.category = params[:category]
 
     respond_to do |format|
       if @item.save
-        format.html { redirect_to @item, notice: 'Item was successfully created.' }
+        format.html { redirect_to inventory_path, notice: 'Item was successfully created.' }
         format.json { render :show, status: :created, location: @item }
       else
         format.html { render :new }
         format.json { render json: @item.errors, status: :unprocessable_entity }
       end
+
     end
   end
 
@@ -60,7 +64,7 @@ class ItemsController < ApplicationController
   def destroy
     @item.destroy
     respond_to do |format|
-      format.html { redirect_to items_url, notice: 'Item was successfully destroyed.' }
+      format.html { redirect_to inventory_path, notice: 'Item was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -68,11 +72,14 @@ class ItemsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_item
-      @item = Item.find(params[:id])
+      @item = Item.find(params[:name])
+      #original Item.find(params[:id])
+      #new Item.find(params[:name])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:User_id, :checkable)
+      params.require(:item).permit(:name, :category)
+      #original params.require(:item).permit(:User_id, :checkable)
     end
 end
