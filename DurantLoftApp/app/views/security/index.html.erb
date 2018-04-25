@@ -66,7 +66,7 @@
     <h3 class="w3-padding-5">Opening Codes</h3>
     <% if user_signed_in? %>
      <% if current_user.manner or current_user.admin %>
-        Front Door Code: 5101 </br>
+        Front Door Code: 5101* </br>
         Lockbox Code: 4228 </br>
         <% end %>
    <% else %>
@@ -76,11 +76,13 @@
    <h3 class="w3-padding-5">Storage Codes</h3>
     <% if user_signed_in? %>
      <% if current_user.admin %>
-       Main sound closet: 3023
-       Rear sound closet: 0187
+       Main sound closet: 30230
+       Rear sound closet: 01872
+       <% else %>
+          Insufficient Priviledges.  Be more faithful in the little things. </br>
        <% end %>
    <% else %>
-    Insufficient Priviledges.  Be more faithful in the little things. </br>
+      Insufficient Priviledges.  Be more faithful in the little things. </br>
    <% end %>
 
 </br>

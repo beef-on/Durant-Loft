@@ -10,13 +10,6 @@
 <div class="w3-top">
   <div class="w3-bar w3-white w3-wide w3-padding w3-card">
 
-
-    <!-- <%= button_to "Home", index_path, :class => "button large", :method => :patch %> -->
-    <!--<a href="#home" class="w3-bar-item w3-button">Home</a>-->
-    <!-- li><%= link_to 'Visit the best group in GP', "http://koinberkeley.org" %></li>
-    <li><%= link_to 'Visit the 2nd best group in GP', "http://a2fberkeley.org" %></li>
- -->
-
     <%= link_to 'Home', root_path, class: "w3-bar-item w3-button" %>
     <%= link_to 'Inventory', inventory_path, class: "w3-bar-item w3-button" %>
     <%= link_to 'Shifts', shifts_path, class: "w3-bar-item w3-button" %>
@@ -49,12 +42,12 @@
     <div class="w3-display-middle w3-margin-top w3-center">
       <h1 class="w3-xxlarge w3-text-orange">Durant</span> <span class="w3-hide-small w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>Loft</b></span></h1>
     </div>
-  </header> -->
+  </header>
 
 <!-- Page content -->
 <div class="w3-content w3-padding" style="max-width:1564px">
 
-
+<center>
   <!-- Contact Section -->
   <div class="w3-container w3-padding-32" id="contact">
     <h3 class="w3-border-bottom w3-border-dark-grey w3-padding-16">Welcome to the Inventory!</h3>
@@ -63,7 +56,7 @@
         If you are permanently removing items, please use the remove button. </br>
         If you are borrowing stuff with intent to return it, please use the checkout button and leave a note when you'll put it back. </br>
     </h4>
-
+</center>
       <h3 class="w3-border-bottom w3-border-dark-grey w3-padding-16"> Add an item to storage </h3>
 
           <%= form_tag create_item_path do %>
