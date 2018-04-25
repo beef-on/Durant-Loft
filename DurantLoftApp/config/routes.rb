@@ -36,7 +36,7 @@ Rails.application.routes.draw do
 # <<<<<<< HEAD
 # >>>>>>> 431158230486fa1e1e4816bf85e52e232fdd9211
 # =======
-
+get "security", to: "security#index", as: "security"
 
 
   patch "inventory/index", to: "home#index", as: "home"
