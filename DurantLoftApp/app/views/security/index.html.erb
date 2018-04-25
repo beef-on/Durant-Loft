@@ -25,7 +25,7 @@
     <%= link_to 'a2f', "http://a2fberkeley.org", class: "w3-bar-item w3-button" %>
 
      <% if user_signed_in? %>
-      <% if user.manner or user.admin %>
+      <% if current_user.manner or current_user.admin %>
         <a href="security" class="w3-bar-item w3-button">Security</a>
       <% end %>
     <% end %>
@@ -44,12 +44,12 @@
 </div>
 
   <!-- Header -->
-  <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+<!--   <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
     <%= image_tag("DLStage.JPG", :alt => "Durant Loft", style: 'height:100%;width:100%;') %>
     <div class="w3-display-middle w3-margin-top w3-center">
       <h1 class="w3-xxlarge w3-text-orange">Durant</span> <span class="w3-hide-small w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>Loft</b></span></h1>
     </div>
-  </header>
+  </header> -->
 
 <!-- Page content -->
 <div class="w3-content w3-padding" style="max-width:1564px">
