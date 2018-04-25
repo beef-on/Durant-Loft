@@ -63,9 +63,11 @@
             <h4 class="w3-padding-2"> <%= label_tag(:name, "Name") %> </h4>
             <h4 class="w3-padding-2"> <%= text_field_tag(:name) %> </h4>
             <h4 class="w3-padding-2"> <%= label_tag(:category, "Category") %> </h4>
-            <h4 class="w3-padding-2"> <%= text_field_tag(:category) %>  </h4>
+            <h4 class="w3-padding-2"><%= select_tag(:category, options_for_select([["Audio/Visual"],["Events"],["Lost and Found"], ["Games/Books"], ["Other"]])) %></h4>
             <%= submit_tag("Add Item", class:"w3-button w3-black w3-section") %>
+
             <% end %>
+
 
 
 </br>
