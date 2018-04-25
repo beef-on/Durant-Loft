@@ -4,8 +4,28 @@
   <%= devise_error_messages! %>
 
   <div class="field">
+    <%= f.label :firstName %>
+    <%= f.text_field :firstName, autofocus: true, autocomplete: "firstName" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :lastName %>
+    <%= f.text_field :lastName, autocomplete: "lastName" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :year %>
+    <%= f.number_field :year, autocomplete: "year" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :manner %>
+    <%= f.check_box :manner, autocomplete: "manner" %>
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autocomplete: "email" %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>

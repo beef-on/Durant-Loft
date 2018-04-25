@@ -12,17 +12,23 @@
 
 <p>
   <strong>Manner1:</strong>
-  <%= @shift.manner1 %>
+  <% if @shift.manner1_id != nil %>
+    <%= User.find(@shift.manner1_id).firstName %>
+  <% end %>
 </p>
 
 <p>
   <strong>Manner2:</strong>
-  <%= @shift.manner2 %>
+  <% if @shift.manner2_id != nil %>
+    <%= User.find(@shift.manner2_id).firstName %>
+  <% end %>
 </p>
 
 <p>
   <strong>Manner3:</strong>
-  <%= @shift.manner3 %>
+  <% if @shift.manner3_id != nil %>
+    <%= User.find(@shift.manner3_id).firstName %>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_shift_path(@shift) %> |
