@@ -60,25 +60,31 @@
 
   <!-- Contact Section -->
   <div class="w3-container w3-padding-32" id="contact">
-    <h3 class="w3-border-bottom w3-border-dark-grey w3-padding-16">Inventory</h3>
-    <p> Ay, I remember syrup sandwiches and crime allowances. </p>
+    <h3 class="w3-border-bottom w3-border-dark-grey w3-padding-16">Welcome to the Inventory!</h3>
+    <h4 class="w3-padding-2"> Hello! </br>
+        When adding items, please categorize it under "Audio/Visual", "Games/Books", "Lost and Found", or "Events". </br>
+        If you are permanently removing items, please use the remove button. </br>
+        If you are borrowing stuff with intent to return it, please use the checkout button and leave a note when you'll put it back. </br>
+    </h4>
 
       <h3 class="w3-border-bottom w3-border-dark-grey w3-padding-16"> Add an item to storage </h3>
 
           <%= form_tag create_item_path do %>
-            <%= label_tag(:name, "Name") %>
-            <%= text_field_tag(:name) %>
-            <%= label_tag(:category, "Category") %>
-            <%= text_field_tag(:category) %>
-            <%= submit_tag("Add Item") %>
+            <h4 class="w3-padding-2"> <%= label_tag(:name, "Name") %> </h4>
+            <h4 class="w3-padding-2"> <%= text_field_tag(:name) %> </h4>
+            <h4 class="w3-padding-2"> <%= label_tag(:category, "Category") %> </h4>
+            <h4 class="w3-padding-2"> <%= text_field_tag(:category) %>  </h4>
+            <%= submit_tag("Add Item", class:"w3-button w3-black w3-section") %>
             <% end %>
+</br>
+</br>
 
+<h3 class="w3-border-bottom w3-border-dark-grey w3-padding-16">Inventory</h3>
 
           <% @items.each do |t| %>
             <%= t.name %>
             <%= t.category %>
-            <li><%= link_to 'Remove', destroy_item_path, :method=>'delete' %></li>
-
+            <%= link_to 'Remove', destroy_item_path, :method=>'delete' %>
             <button class="w3-button w3-black w3-section" type="submit">
               <i class="fa fa-paper-plane"></i> CHECKOUT ITEM
             </button>
