@@ -15,7 +15,10 @@ Rails.application.routes.draw do
   patch "home/foosball", to: "home#foosball", as: "foosball"
   patch "home/pingpong", to: "home#pingpong", as: "pingpong"
   patch "home/dt", to: "home#dt", as: "dt"
-
+  patch "home/meetup", to: "events#events", as: "meetup"
+  # This is the problem right now
+  # patch "users/event", to: "event#create", as: "events"
+  post "users/event", to: "home#index"
   # ----
   # get "/koinberkeley.org", to: "koinberkeley.org"
 # =======

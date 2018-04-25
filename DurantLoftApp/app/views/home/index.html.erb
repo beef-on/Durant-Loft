@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <!-- <h1>Home#index</h1> -->
 </br>
 </br>
@@ -55,7 +55,7 @@
 
 <!-- Header -->
 <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
-  <img class="w3-image" src="app\views\home\DL.jpg" alt="Architecture" width="1500" height="800">
+  <!-- <img class="w3-image" src="app\views\home\DL.jpg" alt="Architecture" width="1500" height="800"> -->
   <!--<img src="durantloft.jpg" alt="I can't get the image to show">-->
   <!--<img class="w3-image" src="/w3images/architect.jpg" alt="Architecture" width="1500" height="800">-->
   <%= image_tag("DLfrontside.jpg", :alt => "Durant Loft", style: 'height:100%;width:100%;') %>
@@ -177,10 +177,9 @@
       <button class="w3-button w3-black w3-section" type="submit">
         <i class="fa fa-paper-plane"></i> Send
       </button>
-
     </form>
   </div>
-   
+  <%= button_to "Test for event button", meetup_path, :class => "button medium", :method => :patch %>
 
 <!-- End page content -->
 </div>

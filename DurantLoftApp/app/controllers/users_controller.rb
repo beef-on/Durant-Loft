@@ -13,6 +13,12 @@ class UsersController < ApplicationController
   def form
   end
 
+  # def events
+  #    @user.events.create(event_params)
+  # end
+
+  
+
   # def manner
   #   @user.manner
   # end

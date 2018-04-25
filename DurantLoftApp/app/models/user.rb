@@ -5,4 +5,5 @@ class User < ApplicationRecord
 	belongs_to :user, optional: true
 	has_many :shifts
 	has_many :items
+	has_many :events
 end
