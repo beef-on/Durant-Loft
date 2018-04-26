@@ -24,8 +24,7 @@ Rails.application.routes.draw do
   post "users/event", to: "home#index"
   post "inventory/new", to: "items#create", as: "create_item"
   patch "inventory/remove", to: "items#destroy", as: "destroy_item"
-
-
+  get "inventory/:id", to: "items#show", as: "show_item"
 
   patch "index", to: "home#index", as: "index"
 

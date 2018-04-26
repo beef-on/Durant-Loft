@@ -35,19 +35,6 @@
   </div>
 </div>
 
-
-<!-- Header -->
-<header class="w3-display-container w3-content w3-wide" style="max-width:1400px; max-height:1200px;" id="home">
-  <!--<img src="durantloft.jpg" alt="I can't get the image to show">-->
-  <!--<img class="w3-image" src="/w3images/architect.jpg" alt="Architecture" width="1500" height="800">-->
-  <%= image_tag("DLfrontside.jpg", :alt => "Durant Loft", style: 'height:100%;width:100%;') %>
-  <div class="w3-display-middle w3-margin-top w3-center">
-    <!-- <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>Durant</b></span> <span class="w3-hide-small w3-text-orange">Loft</span></h1> -->
-    <h1 class="w3-xxlarge w3-text-orange">Durant</span> <span class="w3-hide-small w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>Loft</b></span></h1>
-  </div>
-</header>
-
-
 <!-- Page content -->
 <div class="w3-content w3-padding" style="max-width:1564px">
 
@@ -60,18 +47,7 @@
         If you are borrowing stuff with intent to return it, please use the checkout button and leave a note when you'll put it back. </br>
     </h4>
 </center>
-      <h3 class="w3-border-bottom w3-border-dark-grey w3-padding-16"> Add an item to storage </h3>
-
-          <%= form_tag create_item_path do %>
-            <h4 class="w3-padding-2"> <%= label_tag(:name, "Item") %> </h4>
-            <h4 class="w3-padding-2"> <%= text_field_tag(:name) %> </h4>
-            <h4 class="w3-padding-2"> <%= label_tag(:category, "Category") %> </h4>
-            <h4 class="w3-padding-2"><%= select_tag(:category, options_for_select([["Audio/Visual"],["Events"],["Lost and Found"], ["Games/Books"], ["Other"]])) %></h4>
-            <%= submit_tag("Add Item", class:"w3-button w3-dark-grey w3-section") %>
-
-            <% end %>
-
-
+      <%= link_to "Add an item to storage.", new_item_path, class: "w3-button w3-dark-grey w3-section" %>
 
 </br>
 </br>
@@ -86,7 +62,7 @@ Audio/Visual</br>
 <% @items.each do |t| %>
 <% if t.category == "Audio/Visual" %>
     <h4>
-    <%= button_to t.name, destroy_item_path(id: t.id), class: "w3-button w3-dark-grey w3-section", :method => :patch %>
+<%= link_to t.name, show_item_path(id: t.id), class: "w3-button w3-dark-grey w3-section" %>
     </h4>
     <% end %>
   <% end %>
@@ -98,7 +74,7 @@ Lost and Found </br>
 <% @items.each do |t| %>
 <% if t.category == "Lost and Found" %>
 <h4>
-<%= button_to t.name, destroy_item_path(id: t.id), class: "w3-button w3-dark-grey w3-section", :method => :patch %>
+<%= link_to t.name, show_item_path(id: t.id), class: "w3-button w3-dark-grey w3-section" %>
 </h4>
 <% end %>
 <% end %>
@@ -110,7 +86,7 @@ Other </br>
 <% @items.each do |t| %>
 <% if t.category == "Other" %>
 <h4>
-<%= button_to t.name, destroy_item_path(id: t.id), class: "w3-button w3-dark-grey w3-section", :method => :patch %>
+<%= link_to t.name, show_item_path(id: t.id), class: "w3-button w3-dark-grey w3-section" %>
 </h4>
 <% end %>
 <% end %>
@@ -120,9 +96,9 @@ Books/Games</br>
 </h3>
 
 <% @items.each do |t| %>
-<% if t.category == "Games/Books" %>
+<% if t.category == "Books/Games" %>
 <h4>
-<%= button_to t.name, destroy_item_path(id: t.id), class: "w3-button w3-dark-grey w3-section", :method => :patch %>
+<%= link_to t.name, show_item_path(id: t.id), class: "w3-button w3-dark-grey w3-section" %>
 </h4>
 <% end %>
 <% end %>
@@ -134,32 +110,24 @@ Events
 <% @items.each do |t| %>
 <% if t.category == "Events" %>
 <h4>
-<%= button_to t.name, destroy_item_path(id: t.id), class: "w3-button w3-dark-grey w3-section", :method => :patch %>
+<%= link_to t.name, show_item_path(id: t.id), class: "w3-button w3-dark-grey w3-section" %>
 </h4>
 <% end %>
 <% end %>
 
 <h3 class="w3-border-bottom w3-border-dark-grey w3-padding-16">
 All Items
-</h3> </br>
+</h3>
+  <% @items.each do |t| %>
+    <h4>
+      <%= link_to t.name, show_item_path(id: t.id), class: "w3-button w3-dark-grey w3-section" %>
+    </h4>
+    <% end %>
 
-          <% @items.each do |t| %>
-            <h4><%= t.name %> </h4>
-            <%= button_to "Remove", destroy_item_path(id: t.id), class: "w3-button w3-dark-grey w3-section", :method => :patch %>
-            <!--
-            <button class="w3-button w3-black w3-section" type="submit">
-              <i class="fa fa-paper-plane"></i> CHECKOUT ITEM
-            </button>
-            -->
-            <h3 class="w3-border-bottom w3-border-grey w3-padding-4">
-            <% end %>
-  </div>
-
-
+</div>
 
 <!-- End page content -->
 </div>
-
 
 <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-16">

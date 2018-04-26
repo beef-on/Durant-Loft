@@ -1,15 +1,17 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>User:</strong>
-  <%= @item.User %>
+  <strong>Item:</strong>
+  <%= @item.name %>
 </p>
-
 
 <p>
-  <strong>Checkable:</strong>
-  <%= @item.checkable %>
+  <strong>User:</strong>
+  <% if @item.User_id != nil %>
+  	<%= User.find(@item.User_id).firstName %>
+  <% end %>
 </p>
 
-<%= link_to 'Edit', edit_item_path(@item) %> |
-<%= link_to 'Back', items_path %>
+<%= link_to 'Edit', edit_item_path(@item), class: "w3-button w3-dark-grey w3-section" %> |
+<%= link_to 'Remove', destroy_item_path(id: @item.id), class: "w3-button w3-dark-grey w3-section", :method => :patch %> |
+<%= link_to 'Back', inventory_path, class: "w3-button w3-dark-grey w3-section" %> 
