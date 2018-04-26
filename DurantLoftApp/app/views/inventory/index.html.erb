@@ -91,15 +91,15 @@ Books/Games</br>
 Events
 </h3> </br>
 
-
           <% @items.each do |t| %>
-            <%= t.name %>
-            <%= t.category %>
-            <%= link_to 'Remove', destroy_item_path, :method=>'delete' %>
+            <h3><%= t.name %> </h3>
+            <h3><%= t.category %></h3>
+            <%= button_to "Remove", destroy_item_path(id: t.id), class: "w3-button w3-black w3-section", :method => :patch %>
+            <!--
             <button class="w3-button w3-black w3-section" type="submit">
               <i class="fa fa-paper-plane"></i> CHECKOUT ITEM
             </button>
-            <br>
+            -->
             <% end %>
   </div>
 

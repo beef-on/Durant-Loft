@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   #post "add_item", to: "inventory#new", as: "new"
   #get "/items/new" to: "items#new"
   post "inventory/new", to: "items#create", as: "create_item"
-  delete "inventory/remove", to: "items#destroy", as: "destroy_item"
+  patch "inventory/remove", to: "items#destroy", as: "destroy_item"
   #get "inventory/remove", to: "item#destroy", as: "destroy_item"
   # ----
   # get "/koinberkeley.org", to: "koinberkeley.org"
