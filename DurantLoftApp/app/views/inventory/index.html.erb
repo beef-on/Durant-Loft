@@ -49,18 +49,22 @@
         If you are permanently removing items, please use the remove button. </br>
         If you are borrowing stuff with intent to return it, please use the edit button to change the user. </br>
     </h4>
-</center>
       <%= link_to "Add an item to storage.", new_item_path, class: "w3-button w3-dark-grey w3-section" %>
+</center>
 
 </br>
 </br>
-<b>
+<!-- <b>
+<center>
 <h3 class="w3-border-bottom w3-border-dark-grey w3-padding-16">Inventory</h3>
+</center>
 </b>
+</br>
+</br> -->
 
 <h3 class="w3-border-bottom w3-border-grey w3-padding-16">
-Audio/Visual</br>
-</h3>
+Audio/Visual
+</h3></br>
 
 <% @items.each do |t| %>
 <% if t.category == "Audio/Visual" %>
@@ -71,32 +75,8 @@ Audio/Visual</br>
   <% end %>
 
 <h3 class="w3-border-bottom w3-border-grey w3-padding-16">
-Lost and Found </br>
-</h3>
-
-<% @items.each do |t| %>
-<% if t.category == "Lost and Found" %>
-<h4>
-<%= link_to t.name, show_item_path(id: t.id), class: "w3-button w3-dark-grey w3-section" %>
-</h4>
-<% end %>
-<% end %>
-
-<h3 class="w3-border-bottom w3-border-grey w3-padding-16">
-Other </br>
-</h3>
-
-<% @items.each do |t| %>
-<% if t.category == "Other" %>
-<h4>
-<%= link_to t.name, show_item_path(id: t.id), class: "w3-button w3-dark-grey w3-section" %>
-</h4>
-<% end %>
-<% end %>
-
-<h3 class="w3-border-bottom w3-border-grey w3-padding-16">
-Books/Games</br>
-</h3>
+Books/Games
+</h3></br>
 
 <% @items.each do |t| %>
 <% if t.category == "Books/Games" %>
@@ -108,7 +88,7 @@ Books/Games</br>
 
 <h3 class="w3-border-bottom w3-border-grey w3-padding-16">
 Events
-</h3> </br>
+</h3></br>
 
 <% @items.each do |t| %>
 <% if t.category == "Events" %>
@@ -118,14 +98,42 @@ Events
 <% end %>
 <% end %>
 
-<h3 class="w3-border-bottom w3-border-dark-grey w3-padding-16">
-All Items
+<h3 class="w3-border-bottom w3-border-grey w3-padding-16">
+Lost and Found
+</h3></br>
+
+<% @items.each do |t| %>
+<% if t.category == "Lost and Found" %>
+<h4>
+<%= link_to t.name, show_item_path(id: t.id), class: "w3-button w3-dark-grey w3-section" %>
+</h4>
+<% end %>
+<% end %>
+
+<h3 class="w3-border-bottom w3-border-grey w3-padding-16">
+Other
+</h3></br>
+
+<% @items.each do |t| %>
+<% if t.category == "Other" %>
+<h4>
+<%= link_to t.name, show_item_path(id: t.id), class: "w3-button w3-dark-grey w3-section" %>
+</h4>
+<% end %>
+<% end %>
+
+</br>
+</br>
+</br>
+
+<!-- <h3 class="w3-border-bottom w3-border-dark-grey w3-padding-16">
+  All Items
 </h3>
   <% @items.each do |t| %>
     <h4>
       <%= link_to t.name, show_item_path(id: t.id), class: "w3-button w3-dark-grey w3-section" %>
     </h4>
-    <% end %>
+    <% end %> -->
 
 </div>
 

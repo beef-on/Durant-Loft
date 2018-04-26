@@ -80,14 +80,14 @@ and is wrapped around the whole page content, except for the footer in this exam
       <h3>Post made by:</h3>
       <%= User.find(f.user_id).firstName + " " + User.find(f.user_id).lastName %>
       <h5><b>Event title: </b> </h5> <h6><%= f.title %></h6>
+      <h5><b>Event time: </b> </h5> <h6><%= f.time %></h6>
     </div>
-    <h5><b>Event time: </b> </h5> <h6><%= f.time %></h6>
     <div class="w3-container">
     	<h5>Details:</h5>
       <p><%= f.description %></p>
       <div class="w3-row">
   <% if f.need_rides %>
-    <h3>People who can drive</h3>
+    <h3>People who can drive:</h3>
     <% f.users.each do |user| %>
       <% if user.driver %>
         <br>
@@ -95,7 +95,7 @@ and is wrapped around the whole page content, except for the footer in this exam
       	</br>
       <% end %>
     <% end %>
-  	<h3>People who need rides</h3>
+  	<h3>People who need rides:</h3>
     <% f.users.each do |user| %>
       <% if !user.driver %>
         <br>
