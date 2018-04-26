@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   patch "home/dt", to: "home#dt", as: "dt"
 
   patch "events", to: "events#events", as: "events"
+  patch "events/:id/:user_id", to: "events#update", as: "edit_event"
   post "events", to: "events#create", as: "event"
   get "/events", to: "home#events"
 

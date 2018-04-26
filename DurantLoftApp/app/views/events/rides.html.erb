@@ -1,6 +1,43 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+
+    <%= link_to 'Home', root_path, class: "w3-bar-item w3-button" %>
+    <%= link_to 'Gracepoint', "http://gracepointonline.org", class: "w3-bar-item w3-button" %>
+    <%= link_to 'Meetups', events_path, class: "w3-bar-item w3-button" %>
+    <%= link_to 'Inventory', inventory_path, class: "w3-bar-item w3-button" %>
+
+     <% if user_signed_in? %>
+      <% if current_user.manner or current_user.admin %>
+        <%= link_to 'Shifts', shifts_path, class: "w3-bar-item w3-button" %>
+        <a href="security" class="w3-bar-item w3-button">Security</a>
+      <% end %>
+    <% end %>
+
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+        <% if user_signed_in? %>
+          <%= link_to 'Edit Your User', edit_user_registration_path, class: "w3-bar-item w3-button" %>
+          <%= link_to 'Log Out', destroy_user_session_path, class: "w3-bar-item w3-button", :method=>'delete' %><
+        <% else %>
+          <%= link_to 'Log In', new_user_session_path, class: "w3-bar-item w3-button" %>
+          <%= link_to 'Sign up', new_user_registration_path, class: "w3-bar-item w3-button" %>
+        <% end %>
+    </div>
+  </div>
+</div>
+
 <a href="/" class="w3-bar-item w3-button">Home</a>
 
-<!-- <%= form_for @event do |f| %>
+<%= form_for @event do |f| %>
 	<%=f.label :firstName %>
 	<%=f.text_field :firstName %> <br/>
 
@@ -11,21 +48,4 @@
 	<%= f.check_box :need_rides %><br />
 
 	<%= f.submit %>
-<% end %>-->
-
-
-
-<!-- <a href="/" class="w3-bar-item w3-button">Home</a>
-
-<%= form_tag rides_path do %>
-	<%= label_tag(:firstName, "firstName") %>
-	<%= text_field_tag(:firstName) %> <br/>
-
-	<%= label_tag(:lastName, "lastName") %>
-	<%= text_field_tag(:lastName) %> <br/>
-
-	<%= label_tag(:Driver?, "Can you drive for this event???") %> 
-	<%= check_box_tag(:driver) %><br />
-
-	<%= submit_tag("Submit boi") %>
-<% end %> -->
+<% end %>

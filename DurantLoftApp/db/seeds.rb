@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # Make Users
-[['Brandon', 'Fong', true, true], ['Emmett', 'Ling', false, false], ['Josh', 'Asuncion', true, false]].each do |first, last, manner, admin|
+[['Brandon', 'Fong', true, true, false], ['Emmett', 'Ling', false, false, false], ['Josh', 'Asuncion', true, false, true]].each do |first, last, manner, admin. driver|
   User.create(
     firstName: first,
     lastName: last,
@@ -16,6 +16,7 @@
     password_confirmation: "password",
     manner: manner,
     admin: admin,
+    driver: driver,
     voted: nil
   )
 end
