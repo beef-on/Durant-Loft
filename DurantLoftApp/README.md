@@ -31,7 +31,6 @@ Item
 - DESCRIBE MEETUP FEATURE HERE---------------------------------------------------------------
 
 #Division of Labor:
-<<<<<<< HEAD
 - Josh Asuncion: front end, security
 - Brandon Fong: Devise, shifts, seeds
 - Emmett Ling: front end, inventory
