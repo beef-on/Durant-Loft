@@ -26,7 +26,6 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif, background-color:coral;
         <a href="security" class="w3-bar-item w3-button">Security</a>
       <% end %>
     <% end %>
-    <%= button_to "Create a meetup!", events_path, :class => "w3-bar-item w3-button", :method => :patch %>
 
     <!-- Float links to the right. Hide them on small screens -->
     <div class="w3-right w3-hide-small">
@@ -52,6 +51,8 @@ and is wrapped around the whole page content, except for the footer in this exam
 </br>
   <h1><b>MEETUP</b></h1>
   <p>Connect with your DL community here!! <span class="w3-tag">Test</span></p>
+</br>
+  <%= button_to "Create a meetup!", events_path, :class => "w3-button w3-white w3-border", :method => :patch %>
 </header>
 
 
