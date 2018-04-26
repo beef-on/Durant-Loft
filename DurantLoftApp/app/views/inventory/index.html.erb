@@ -11,14 +11,13 @@
   <div class="w3-bar w3-white w3-wide w3-padding w3-card">
 
     <%= link_to 'Home', root_path, class: "w3-bar-item w3-button" %>
-    <%= link_to 'Inventory', inventory_path, class: "w3-bar-item w3-button" %>
-    <%= link_to 'Shifts', shifts_path, class: "w3-bar-item w3-button" %>
     <%= link_to 'Gracepoint', "http://gracepointonline.org", class: "w3-bar-item w3-button" %>
-    <%= link_to 'Koinonia', "http://koinberkeley.org", class: "w3-bar-item w3-button" %>
-    <%= link_to 'a2f', "http://a2fberkeley.org", class: "w3-bar-item w3-button" %>
+    <%= link_to 'Meetups', events_path, class: "w3-bar-item w3-button" %>
+    <%= link_to 'Inventory', inventory_path, class: "w3-bar-item w3-button" %>
 
      <% if user_signed_in? %>
       <% if current_user.manner or current_user.admin %>
+        <%= link_to 'Shifts', shifts_path, class: "w3-bar-item w3-button" %>
         <a href="security" class="w3-bar-item w3-button">Security</a>
       <% end %>
     <% end %>
