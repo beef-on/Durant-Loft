@@ -45,7 +45,7 @@
 
   <!-- Header -->
   <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
-    <%= image_tag("DLStage.JPG", :alt => "Durant Loft", style: 'height:100%;width:100%;') %>
+    <%= image_tag("DLfrontside.jpg", :alt => "Durant Loft", style: 'height:100%;width:100%;') %>
     <div class="w3-display-middle w3-margin-top w3-center">
       <h1 class="w3-xxlarge w3-text-orange">Durant</span> <span class="w3-hide-small w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>Loft</b></span></h1>
     </div>
@@ -56,13 +56,43 @@
 
 
   <!-- Contact Section -->
+
+    <h6 class= "w3-center w3-padding-2"> <center> "<h5> <i><b> Behold! I hold the keys to Death and Hades! </i></b> </br> </h6> </center>
+      <p> <i>  - Revelation </p> </i>
   <div class="w3-container w3-padding-32" id="contact">
-    <h3 class="w3-border-bottom w3-border-dark-grey w3-padding-16">Admin and Manners</h3>
-    <h4 class="w3-padding-2"> Here is this month's security code: </br>
+    <h3 class="w3-border-bottom w3-border-dark-grey w3-padding-16">Access Codes</h3>
+    </br>
 
-    </h4>
 
-          <!-- Insert code -->
+    <h3 class="w3-padding-5">Opening Codes</h3>
+    <% if user_signed_in? %>
+     <% if current_user.manner or current_user.admin %>
+        Front Door Code: 5101* </br>
+        Lockbox Code: 4228 </br>
+        <% end %>
+   <% else %>
+     Insufficient Priviledges.  Be more faithful in the little things. </br>
+  <% end %>
+
+   <h3 class="w3-padding-5">Storage Codes</h3>
+    <% if user_signed_in? %>
+     <% if current_user.admin %>
+       Main sound closet: 30230
+       Rear sound closet: 01872
+       <% else %>
+          Insufficient Priviledges.  Be more faithful in the little things. </br>
+       <% end %>
+   <% else %>
+      Insufficient Priviledges.  Be more faithful in the little things. </br>
+   <% end %>
+
+</br>
+</br>
+  </h5>
+<center>
+<h5 class="w3-padding-5"> If the codes are not working or you're locked out for other reasons, go to DH. </h5>
+</center>
+
   </div>
 
 

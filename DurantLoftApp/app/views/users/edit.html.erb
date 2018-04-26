@@ -1,3 +1,60 @@
+
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+
+
+    <!-- <%= button_to "Home", index_path, :class => "button large", :method => :patch %> -->
+    <!--<a href="#home" class="w3-bar-item w3-button">Home</a>-->
+    <!-- li><%= link_to 'Visit the best group in GP', "http://koinberkeley.org" %></li>
+    <li><%= link_to 'Visit the 2nd best group in GP', "http://a2fberkeley.org" %></li>
+ -->
+
+    <%= link_to 'Home', root_path, class: "w3-bar-item w3-button" %>
+    <%= link_to 'Inventory', inventory_path, class: "w3-bar-item w3-button" %>
+    <%= link_to 'Shifts', shifts_path, class: "w3-bar-item w3-button" %>
+    <%= link_to 'Gracepoint', "http://gracepointonline.org", class: "w3-bar-item w3-button" %>
+    <%= link_to 'Koinonia', "http://koinberkeley.org", class: "w3-bar-item w3-button" %>
+    <%= link_to 'a2f', "http://a2fberkeley.org", class: "w3-bar-item w3-button" %>
+
+     <% if user_signed_in? %>
+      <% if current_user.manner or current_user.admin %>
+        <a href="security" class="w3-bar-item w3-button">Security</a>
+      <% end %>
+    <% end %>
+
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+        <% if user_signed_in? %>
+          <%= link_to 'Edit Your User', edit_user_registration_path, class: "w3-bar-item w3-button" %>
+          <%= link_to 'Log Out', destroy_user_session_path, class: "w3-bar-item w3-button", :method=>'delete' %><
+        <% else %>
+          <%= link_to 'Log In', new_user_session_path, class: "w3-bar-item w3-button" %>
+          <%= link_to 'Sign up', new_user_registration_path, class: "w3-bar-item w3-button" %>
+        <% end %>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1400px; max-height:1200px;" id="home">
+  <!--<img src="durantloft.jpg" alt="I can't get the image to show">-->
+  <!--<img class="w3-image" src="/w3images/architect.jpg" alt="Architecture" width="1500" height="800">-->
+  <%= image_tag("DLStage.JPG", :alt => "Durant Loft", style: 'height:100%;width:100%;') %>
+  <div class="w3-display-middle w3-margin-top w3-center">
+    <!-- <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>Durant</b></span> <span class="w3-hide-small w3-text-orange">Loft</span></h1> -->
+    <h1 class="w3-xxlarge w3-text-orange">Durant</span> <span class="w3-hide-small w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>Loft</b></span></h1>
+  </div>
+</header>
+
 <h1>Editing User</h1>
 
 <%= render 'form', user: @user %>
