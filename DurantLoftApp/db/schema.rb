@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180425094106) do
+ActiveRecord::Schema.define(version: 20180426095121) do
 
   create_table "events", force: :cascade do |t|
     t.string "title"
@@ -22,6 +22,13 @@ ActiveRecord::Schema.define(version: 20180425094106) do
     t.text "riders", default: "--- []\n"
     t.boolean "need_rides"
     t.integer "user_id"
+  end
+
+  create_table "events_users", id: false, force: :cascade do |t|
+    t.integer "event_id", null: false
+    t.integer "user_id", null: false
+    t.index ["event_id", "user_id"], name: "index_events_users_on_event_id_and_user_id"
+    t.index ["user_id", "event_id"], name: "index_events_users_on_user_id_and_event_id"
   end
 
   create_table "items", force: :cascade do |t|
@@ -67,6 +74,7 @@ ActiveRecord::Schema.define(version: 20180425094106) do
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
     t.boolean "voted"
+    t.boolean "driver"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

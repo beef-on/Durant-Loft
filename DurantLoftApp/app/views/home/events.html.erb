@@ -63,14 +63,24 @@ and is wrapped around the whole page content, except for the footer in this exam
       <div class="w3-row">
       	<h3>People who can drive</h3>
 	<br>
-	<%= f.drivers %>
+  <% f.users.each do |user| %>
+  <% if user.driver %>
+	<%= user.firstName + " " + user.lastName%>
+  <% end %>
+  <% end %>
 	</br>
 	<h3>People who need rides</h3>
+  <br>
+  <% f.users.each do |user| %>
+  <% if !user.driver %>
+  <%= user.firstName + " " + user.lastName%>
+  <% end %>
+  <% end %>
+  </br>
 	<br>
-	<%= f.riders %>
 	</br>
 	<div class="w3-col m8 s12">
-	<p><button class="w3-button w3-padding-large w3-white w3-border"><b><%= link_to 'Click here to sign up for rides for this event', rides_path(:id => f.id) %></b></button></p>
+	<p><button class="w3-button w3-padding-large w3-white w3-border"><b><%= link_to 'Click here to sign up for rides for this event', rides_path(:id => f.id,:user_id => current_user.id) %></b></button></p>
 	</div>
         <div class="w3-col m4 w3-hide-small">
         </div>

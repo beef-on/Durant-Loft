@@ -74,6 +74,11 @@
   </div>
 
   <div class="field">
+  <%= f.label :Are_you_a_driver? %> 
+  <%= f.check_box :driver %>
+  </div>
+
+  <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>

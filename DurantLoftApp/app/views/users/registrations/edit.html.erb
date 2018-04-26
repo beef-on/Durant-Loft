@@ -73,6 +73,11 @@
   </div>
 
   <div class="field">
+    <%= f.label :Are_you_a_driver? %>
+    <%= f.check_box :driver %>
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autocomplete: "email" %>
   </div>

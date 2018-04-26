@@ -21,6 +21,7 @@ class UsersController < ApplicationController
      # @user.events.create(event_params)
   end
 
+
   
 
   # def manner

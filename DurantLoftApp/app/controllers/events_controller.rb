@@ -1,18 +1,5 @@
 class EventsController < ApplicationController
 	before_action :authenticate_user!
-	attr_reader :drivers
-	attr_reader :riders
-	attr_accessor :drivers
-	attr_accessor :riders
-
-	def drivers
-		@event.instance_variable_get(:drivers)
-	end
-
-	def riders
-		@riders.instance_variable_get(:riders)
-	end
-
 
 	def index
 		Event.all
@@ -24,6 +11,12 @@ class EventsController < ApplicationController
 
 	def rides
 		@event = Event.find(params[:id])
+		puts params[:user_id].to_i
+		if !@event.users.exists?(params[:user_id].to_i)
+			@event.users<<(User.find(params[:user_id].to_i))
+		else 
+			puts "Can't. Already signed up for event!"
+		end
 		render 'home/events'
 	end 
 
@@ -34,7 +27,6 @@ class EventsController < ApplicationController
 		# 	@event.riders.push(params[:firstName] + " " + params[:lastName])
 		# end
 	end
-
 
 	def create
 		@event = Event.create(title:params[:event][:title],description:params[:event][:description], need_rides:params[:event][:need_rides],time:params[:event][:time])

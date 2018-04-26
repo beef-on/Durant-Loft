@@ -47,7 +47,7 @@ get "security", to: "security#index", as: "security"
 
   post "rides", to: "events#rides"
   get "rides", to: "events#rides"
-  post "rides", to: "events#riders"
+  # post "rides", to: "events#riders"
 
   #Add item
   #Permanent Remove
