@@ -32,5 +32,5 @@ Item
 #Division of Labor:
 - Josh: front end, security
 - Brandon: Devise, shifts, seeds
-- Emmett: front end, inventory
+- Emmett: front end, inventory, security
 - Joshua: meetup, front end
