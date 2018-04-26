@@ -36,7 +36,7 @@
     <%= link_to 'a2f', "http://a2fberkeley.org", class: "w3-bar-item w3-button" %>
 
      <% if user_signed_in? %>
-      <% if user.manner or user.admin %>
+      <% if current_user.manner or current_user.admin %>
         <a href="security" class="w3-bar-item w3-button">Security</a>
       <% end %>
     <% end %>
