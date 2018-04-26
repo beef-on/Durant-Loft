@@ -21,9 +21,6 @@ class UsersController < ApplicationController
      # @user.events.create(event_params)
   end
 
-
-  
-
   # def manner
   #   @user.manner
   # end
@@ -92,8 +89,9 @@ class UsersController < ApplicationController
     #removed "require(:user)" for now
     #may add two params, email and encrypted_password
     def user_params
-      params.permit(:firstName, :lastName, :year, :manner, :admin, :voted, :email, :encrypted_password)
+      params.permit(:firstName, :lastName, :year, :manner, :admin, :driver, :voted, :email, :encrypted_password)
     end
+
     def event_params
       params.permit(:event).permit(:title, :description, :need_rides)
     end
