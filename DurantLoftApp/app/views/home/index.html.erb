@@ -1,13 +1,4 @@
 
-<!-- <h1>Home#index</h1> -->
-
-<!-- <h1>Sign up here</h1> -->
-
-
-<!-- <%= button_to "Sign up as a user here as long as you're not Emmett", form_path, :class => "button small", :method => :patch%> -->
-
-<!-- <%= button_to "You can sign up as long as you're not Emmett", form_path, :class => "button small", :method => :patch %>
--->
 
 <!DOCTYPE html>
 <html>
@@ -24,9 +15,17 @@
 
     <!-- <%= button_to "Home", index_path, :class => "button large", :method => :patch %> -->
     <!--<a href="#home" class="w3-bar-item w3-button">Home</a>-->
-    <!-- li><%= link_to 'Visit the best group in GP', "http://koinberkeley.org" %></li>
-    <li><%= link_to 'Visit the 2nd best group in GP', "http://a2fberkeley.org" %></li>
- -->
+    <a href="/" class="w3-bar-item w3-button">Home</a>
+    <a href="#about" class="w3-bar-item w3-button">About</a>
+
+    <a href="inventory" class="w3-bar-item w3-button">Inventory</a>
+    <a href="shifts" class="w3-bar-item w3-button">Shifts</a>
+    <a href="http://gracepointonline.org" class="w3-bar-item w3-button">Gracepoint</a>
+    <a href="http://koinberkeley.org" class="w3-bar-item w3-button">Gryffindor!</a>
+    <a href="http://a2fberkeley.org" class="w3-bar-item w3-button">Ravenclaw!</a>
+    <a href="events" class="w3-bar-item w3-button">MEETUPS</a>
+    <!-- <li><%= link_to 'Create a meetup.', events_path %></li> -->
+    <%= button_to "Create a meetup!", events_path, :class => "button medium", :method => :patch %>
 
     <%= link_to 'Home', root_path, class: "w3-bar-item w3-button" %>
     <%= link_to 'Inventory', inventory_path, class: "w3-bar-item w3-button" %>
@@ -104,10 +103,8 @@
       <button class="w3-button w3-black w3-section" type="submit">
         <i class="fa fa-paper-plane"></i> Send
       </button>
-
     </form>
   </div>
-
 
 <!-- End page content -->
 </div>

@@ -15,11 +15,13 @@ Rails.application.routes.draw do
   patch "home/foosball", to: "home#foosball", as: "foosball"
   patch "home/pingpong", to: "home#pingpong", as: "pingpong"
   patch "home/dt", to: "home#dt", as: "dt"
-
-  #post "inventory/add_item", to: "inventory#new", as: "new"
-  #post "add_item", to: "inventory#new", as: "new"
-  #get "/items/new" to: "items#new"
+  patch "events", to: "events#events", as: "events"
+  post "events", to: "events#create", as: "event"
+  get "/events", to: "home#events"
+  post "home/meetup", to: "home#index"
+  post "users/event", to: "home#index"
   post "inventory/new", to: "items#create", as: "create_item"
+
   patch "inventory/remove", to: "items#destroy", as: "destroy_item"
   #get "inventory/remove", to: "item#destroy", as: "destroy_item"
   # ----
@@ -42,10 +44,10 @@ get "security", to: "security#index", as: "security"
 
   patch "inventory/index", to: "home#index", as: "home"
   get "inventory", to: "inventory#index", as: "inventory"
-  #patch "home/inventory", to: "inventory#index", as: "inventory"
-# >>>>>>> 996309656c7066ad2f4e5cc7259f8a3b11fddc0d
-  #Inventory
-  #main inventory route
+
+  post "rides", to: "events#rides"
+  get "rides", to: "events#rides"
+  post "rides", to: "events#riders"
 
   #Add item
   #Permanent Remove

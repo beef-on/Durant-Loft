@@ -5,6 +5,7 @@ class User < ApplicationRecord
 	belongs_to :user, optional: true
 	has_many :shifts
 	has_many :items
-	has_many :users, through: :shifts
-
+<<<<<<< HEAD
+	has_many :events
+>>>>>>> b7db2a141a87ba7fc57f419134f7c5adcffa9ed8
 end
