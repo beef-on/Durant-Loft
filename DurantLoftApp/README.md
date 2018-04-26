@@ -30,7 +30,7 @@ Item
 - DESCRIBE MEET UP HERE---------------------------------------------------------------
 
 #Division of Labor:
-Josh: front end, ADD WHAT JOSH DID HERE---------------------------------------------------------------
-Brandon: Models, Devise, shifts, seeds
+Josh: front end, security
+Brandon: Devise, shifts, seeds
 Emmett: front end, inventory
-Joshua: meet up, ADD WHAT JOSHIE DID HERE---------------------------------------------------------------
+Joshua: meetup, front end
