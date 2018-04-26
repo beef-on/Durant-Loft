@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   get 'home/index'
+  get "shifts/showdate/:date", to: "shifts#showdate", as: "showdate_shift"
 
   resources :shifts
   resources :items

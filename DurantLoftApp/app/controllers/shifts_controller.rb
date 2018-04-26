@@ -12,6 +12,11 @@ class ShiftsController < ApplicationController
   def show
   end
 
+  def showdate
+    @shifts = Shift.all
+    @date = params[:date]
+  end
+
   # GET /shifts/new
   def new
     @shift = Shift.new
