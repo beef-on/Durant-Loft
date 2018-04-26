@@ -81,6 +81,6 @@ class UsersController < ApplicationController
     #removed "require(:user)" for now
     #may add two params, email and encrypted_password
     def user_params
-      params.permit(:firstName, :lastName, :year, :manner, :admin, :voted)
+      params.permit(:firstName, :lastName, :year, :manner, :admin, :voted, :email, :encrypted_password)
     end
 end
