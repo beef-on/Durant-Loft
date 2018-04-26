@@ -62,12 +62,18 @@
         <td><%= shift.end.strftime("%H:%M") %></td>
         <% if shift.manner1_id != nil %>
           <td><%= User.find(shift.manner1_id).firstName %></td>
+        <% else %>
+          <td>N/A</td>
         <% end %>
         <% if shift.manner2_id != nil %>
           <td><%= User.find(shift.manner2_id).firstName %></td>
+        <% else %>
+          <td>N/A</td>
         <% end %>
         <% if shift.manner3_id != nil %>
           <td><%= User.find(shift.manner3_id).firstName %></td>
+        <% else %>
+          <td>N/A</td>
         <% end %>
         <td><%= link_to 'Show', shift %></td>
         <td><%= link_to 'Edit', edit_shift_path(shift) %></td>
@@ -78,15 +84,15 @@
 </table>
 
 <%= month_calendar events: @shifts do |date, shifts| %>
-  <%= date %>
+  <%= link_to 'Date' %>
 
-  <% shifts.each do |shift| %>
+  <!--<% shifts.each do |shift| %>
     <div>
       <% if shift.manner1_id != nil %>
           <td><%= User.find(shift.manner1_id).firstName %></td>
         <% end %>
     </div>
-  <% end %>
+  <% end %>-->
 <% end %>
 
 <br>
