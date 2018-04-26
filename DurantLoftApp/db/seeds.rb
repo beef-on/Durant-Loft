@@ -21,7 +21,7 @@
 end
 
 # Make Shifts
-(10..11).each do |start|
+(10..23).each do |start|
   (23..27).each do |date|
   	@startDate = DateTime.new(2018, 4, date, start)
   	@endDate = DateTime.new(2018, 4, date, start + 1)
@@ -32,7 +32,7 @@ end
   end
 end
 
-[['Avalon', 'Entertainment', true, true], ['Ben\'s Acoustic Guitar', 'Audiovisual', false, false], ['ESV Study Bible', 'Library', true, false]].each do |called, category, check, temp|
+[['Avalon', 'Books/Games', true, true], ['Ben\'s Acoustic Guitar', 'Audio/Visual', false, false], ['ESV Study Bible', 'Books/Games', true, false]].each do |called, category, check, temp|
   Item.create(
     checkable: check,
     name: called,

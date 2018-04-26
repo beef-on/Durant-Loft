@@ -23,17 +23,17 @@
 
   <div class="field">
     <%= form.label :manner1_id %>
-    <%= form.collection_select :shift, User.where(manner: true), :id, :firstName, include_blank: true %>
+    <%= form.collection_select :manner1_id, User.where(manner: true), :id, :firstName, include_blank: true %>
   </div>
 
   <div class="field">
     <%= form.label :manner2_id %>
-    <%= form.collection_select :shift, User.where(manner: true), :id, :firstName, include_blank: true %>
+    <%= form.collection_select :manner2_id, User.where(manner: true), :id, :firstName, include_blank: true %>
   </div>
 
   <div class="field">
     <%= form.label :manner3_id %>
-    <%= form.collection_select :shift, User.where(manner: true), :id, :firstName, include_blank: true %>
+    <%= form.collection_select :manner3_id, User.where(manner: true), :id, :firstName, include_blank: true %>
   </div>
 
   <div class="actions">
