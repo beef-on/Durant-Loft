@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <!DOCTYPE html>
 <html>
 <title>W3.CSS Template</title>
@@ -37,10 +35,13 @@
   </div>
 </div>
 
+<!-- Page content -->
+<div class="w3-content w3-padding" style="max-width:1564px">
+
 </br>
 </br>
 
-<h1>Shifts for <%= @date %></h1>
+<h3 class="w3-border-bottom w3-border-dark-grey w3-padding-16">Shifts for <%= @date %></h3>
 
 <table>
   <thead>
@@ -76,8 +77,10 @@
             <td>N/A</td>
           <% end %>
           <td><%= link_to 'Show', shift %></td>
-          <td><%= link_to 'Edit', edit_shift_path(shift) %></td>
-          <td><%= link_to 'Destroy', shift, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% if current_user.manner or current_user.admin %>
+            <td><%= link_to 'Edit', edit_shift_path(shift) %></td>
+            <td><%= link_to 'Delete', shift, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
         </tr>
       <% end %>
     <% end %>

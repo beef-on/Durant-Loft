@@ -32,7 +32,7 @@ end
   end
 end
 
-[['Avalon', 'Books/Games', true, true], ['Ben\'s Acoustic Guitar', 'Audio/Visual', false, false], ['ESV Study Bible', 'Books/Games', true, false]].each do |called, category, check, temp|
+[['Mac Charger', 'Lost And Found', false, false], ['Avalon', 'Books/Games', true, true], ['Ben\'s Acoustic Guitar', 'Audio/Visual', false, false], ['ESV Study Bible', 'Books/Games', true, false]].each do |called, category, check, temp|
   Item.create(
     checkable: check,
     name: called,
