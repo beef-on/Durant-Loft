@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180424102649) do
+ActiveRecord::Schema.define(version: 20180425094106) do
 
   create_table "events", force: :cascade do |t|
     t.string "title"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20180424102649) do
     t.text "drivers", default: "--- []\n"
     t.text "riders", default: "--- []\n"
     t.boolean "need_rides"
+    t.integer "user_id"
   end
 
   create_table "items", force: :cascade do |t|

@@ -6,22 +6,41 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <body>
 
+
   <!-- Navbar (sit on top) -->
   <div class="w3-top">
     <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+
+
+      <!-- <%= button_to "Home", index_path, :class => "button large", :method => :patch %> -->
+
+
       <!--<a href="#home" class="w3-bar-item w3-button">Home</a>-->
       <a href="/" class="w3-bar-item w3-button">Home</a>
+      <a href="#about" class="w3-bar-item w3-button">About</a>
+
+
       <a href="inventory" class="w3-bar-item w3-button">Inventory</a>
-      <a href="/" class="w3-bar-item w3-button">Events [TO DO]</a>
+      <a href="shifts" class="w3-bar-item w3-button">Shifts</a>
+      <a href="http://gracepointonline.org" class="w3-bar-item w3-button">Gracepoint</a>
+      <a href="http://koinberkeley.org" class="w3-bar-item w3-button">Gryffindor!</a>
+      <a href="http://a2fberkeley.org" class="w3-bar-item w3-button">Ravenclaw!</a>
+      <!-- li><%= link_to 'Visit the best group in GP', "http://koinberkeley.org" %></li>
+      <li><%= link_to 'Visit the 2nd best group in GP', "http://a2fberkeley.org" %></li>
+   -->
 
       <!-- Float links to the right. Hide them on small screens -->
       <div class="w3-right w3-hide-small">
           <% if user_signed_in? %>
+            <li><%= link_to 'Edit Your User', edit_user_registration_path %></li>
             <a href="users/edit" class="w3-bar-item w3-button">Edit Your Account</a>
-            <%= link_to 'Log Out', destroy_user_session_path, :method=>'delete' %>
+            <li><%= link_to 'Log Out', destroy_user_session_path, :method=>'delete' %></li>
           <% else %>
-            <a href="users/sign_in" class="w3-bar-item w3-button">Log In</a>
-            <a href="users/sign_up" class="w3-bar-item w3-button">Join Durant Loft</a>
+            <li><%= link_to 'Log In', new_user_session_path %></li>
+            <li><%= link_to 'Sign up', new_user_registration_path %></li>
+            <li><%= link_to 'Log Out', destroy_user_session_path, :method=>'delete' %></li>
+
+
           <% end %>
       </div>
     </div>
@@ -35,42 +54,36 @@
     </div>
   </header>
 
-
 <!-- Page content -->
 <div class="w3-content w3-padding" style="max-width:1564px">
 
 
   <!-- Contact Section -->
   <div class="w3-container w3-padding-32" id="contact">
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Put an item into storage</h3>
+    <h3 class="w3-border-bottom w3-border-dark-grey w3-padding-16">Inventory</h3>
     <p> Ay, I remember syrup sandwiches and crime allowances. </p>
 
+      <h3 class="w3-border-bottom w3-border-dark-grey w3-padding-16"> Add an item to storage </h3>
 
-    <form action="/action_page.php" target="_blank">
-      <input class="w3-input w3-border" type="text" placeholder="Item" required name="Item">
-      <input class="w3-input w3-section w3-border" type="text" placeholder="Room" required name="Room">
-
-      <button class="w3-button w3-black w3-section" type="submit">
-        <i class="fa fa-paper-plane"></i> STORE ITEM
-      </button>
-    </form>
-
-      <h3 class="w3-border-bottom w3-border-blue w3-padding-16"> Inventory </h3>
-
-      <% ar = ["ignite", "flora", "on", "a", "daily", "basis"] %>
-      <% ar.each do |t| %>
-        <%= t %>
-        <button class="w3-button w3-black w3-section" type="submit">
-          <i class="fa fa-paper-plane"></i> REMOVE ITEM
-        </button>
-
-        <button class="w3-button w3-black w3-section" type="submit">
-          <i class="fa fa-paper-plane"></i> CHECKOUT ITEM
-        </button>
-        <br>
-      <% end %>
+          <%= form_tag create_item_path do %>
+            <%= label_tag(:name, "Name") %>
+            <%= text_field_tag(:name) %>
+            <%= label_tag(:category, "Category") %>
+            <%= text_field_tag(:category) %>
+            <%= submit_tag("Add Item") %>
+            <% end %>
 
 
+          <% @items.each do |t| %>
+            <%= t.name %>
+            <%= t.category %>
+            <li><%= link_to 'Remove', destroy_item_path, :method=>'delete' %></li>
+
+            <button class="w3-button w3-black w3-section" type="submit">
+              <i class="fa fa-paper-plane"></i> CHECKOUT ITEM
+            </button>
+            <br>
+            <% end %>
   </div>
 
 

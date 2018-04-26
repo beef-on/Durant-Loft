@@ -1,16 +1,4 @@
 
-<!-- <h1>Home#index</h1> -->
-</br>
-</br>
-</br>
-<p>Welcome to eDurantLoft!</p>
-<!-- <h1>Sign up here</h1> -->
-
-
-<!-- <%= button_to "Sign up as a user here as long as you're not Emmett", form_path, :class => "button small", :method => :patch%> -->
-
-<!-- <%= button_to "You can sign up as long as you're not Emmett", form_path, :class => "button small", :method => :patch %>
--->
 
 <!DOCTYPE html>
 <html>
@@ -24,19 +12,22 @@
 <div class="w3-top">
   <div class="w3-bar w3-white w3-wide w3-padding w3-card">
 
-    <li><%= link_to 'Home', root_path %></li>
+
     <!-- <%= button_to "Home", index_path, :class => "button large", :method => :patch %> -->
-    <a href="#about" class="w3-bar-item w3-button">About</a>
-    <a href="http://gracepointonline.org" class="w3-bar-item w3-button">Gracepoint</a>
+
+
     <!--<a href="#home" class="w3-bar-item w3-button">Home</a>-->
     <a href="/" class="w3-bar-item w3-button">Home</a>
+    <a href="#about" class="w3-bar-item w3-button">About</a>
+
     <a href="inventory" class="w3-bar-item w3-button">Inventory</a>
     <a href="shifts" class="w3-bar-item w3-button">Shifts</a>
-    <a href="http://koinberkeley.org" class="w3-bar-item w3-button">Visit the best group in GP</a>
-    <a href="http://a2fberkeley.org" class="w3-bar-item w3-button">Visit the 2nd best group in GP</a>
-    <!-- li><%= link_to 'Visit the best group in GP', "http://koinberkeley.org" %></li>
-    <li><%= link_to 'Visit the 2nd best group in GP', "http://a2fberkeley.org" %></li>
- -->
+    <a href="http://gracepointonline.org" class="w3-bar-item w3-button">Gracepoint</a>
+    <a href="http://koinberkeley.org" class="w3-bar-item w3-button">Gryffindor!</a>
+    <a href="http://a2fberkeley.org" class="w3-bar-item w3-button">Ravenclaw!</a>
+    <a href="events" class="w3-bar-item w3-button">MEETUPS</a>
+    <!-- <li><%= link_to 'Create a meetup.', events_path %></li> -->
+    <%= button_to "Create a meetup!", events_path, :class => "button medium", :method => :patch %>
 
     <!-- Float links to the right. Hide them on small screens -->
     <div class="w3-right w3-hide-small">
@@ -46,16 +37,14 @@
           <li><%= link_to 'Log Out', destroy_user_session_path, :method=>'delete' %></li>
         <% else %>
           <li><%= link_to 'Log In', new_user_session_path %></li>
-          <li><%= link_to 'Join Durant Loft', new_user_registration_path %></li>
-          <%= link_to 'Log Out', destroy_user_session_path, :method=>'delete' %>
-        <% end %> 
+          <li><%= link_to 'Sign up', new_user_registration_path %></li>
+        <% end %>
     </div>
   </div>
 </div>
 
 <!-- Header -->
 <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
-  <!-- <img class="w3-image" src="app\views\home\DL.jpg" alt="Architecture" width="1500" height="800"> -->
   <!--<img src="durantloft.jpg" alt="I can't get the image to show">-->
   <!--<img class="w3-image" src="/w3images/architect.jpg" alt="Architecture" width="1500" height="800">-->
   <%= image_tag("DLfrontside.jpg", :alt => "Durant Loft", style: 'height:100%;width:100%;') %>
@@ -68,38 +57,38 @@
 <div class="w3-content w3-padding" style="max-width:1564px">
 
   <!-- Project Section -->
+  <!--
   <div class="w3-container w3-padding-32" id="leaderboards">
     <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Leaderboards</h3>
   </div>
-
+-->
   <div class="w3-row-padding">
     <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">DL Bum of the week</div>
-        <!-- <img src="/w3images/house5.jpg" alt="House" style="width:100%"> -->
-      </div>
+
       </br>
     </br>
     </br>
-      <%= button_to "Guess who it is??(It's not Emmett)", bum_path, :class => "button medium", :method => :patch %>
-        <a href="inventory" class="w3-display-topleft w3-button w3-black w3-button">Inventory</a>
-        <!-- <img src="https://i.imgur.com/GWEJX06.jpg" alt="House" style="width:100%"> -->
+
       </div>
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-display-container">
+
         <div class="w3-display-topleft w3-black w3-padding">Foosball</div>
+
+        <a href="inventory" class="w3-display-topleft w3-button w3-black w3-button">Inventory</a>
+        <a href="home/pingpong" class="w3-display-topleft w3-button w3-black w3-button">Ping Pong</a>
         <!-- <img src="/w3images/house2.jpg" alt="House" style="width:100%"> -->
         <!-- <img src="DL.jpg" alt="House" style="width:100%"> -->
       </div>
       </br>
     </br>
     </br>
-      <%= button_to "Who's the golfer tonight?!!", foosball_path, :class => "button medium", :method => :patch %>
+
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">PingPong</div>
+        <a href="inventory" class="w3-display-topleft w3-button w3-black w3-button">Inventory</a>
         <!-- <img src="/w3images/house3.jpg" alt="House" style="width:100%"> -->
         <!-- <a href="bum" class="w3-button w3-black w3-button">Bum of the Week</a> -->
         <!-- <img src="app\DL.jpg" alt="House" style="width:100%"> -->
@@ -107,7 +96,7 @@
     </br>
     </br>
     </br>
-      <%= button_to "Who can top spin tonight???", pingpong_path, :class => "button medium", :method => :patch %>
+      <!-- <%= button_to "Who can top spin tonight???", pingpong_path, :class => "button medium", :method => :patch %> -->
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
       <div class="w3-display-container">
@@ -179,7 +168,6 @@
       </button>
     </form>
   </div>
-  <%= button_to "Test for event button", meetup_path, :class => "button medium", :method => :patch %>
 
 <!-- End page content -->
 </div>

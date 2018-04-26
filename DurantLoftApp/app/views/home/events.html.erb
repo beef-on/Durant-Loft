@@ -1,0 +1,131 @@
+
+<a href="/" class="w3-bar-item w3-button">Home</a>
+
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif, background-color:coral;}
+</style>
+<body class="w3-light-grey">
+
+<!-- w3-content defines a container for fixed size centered content, 
+and is wrapped around the whole page content, except for the footer in this example -->
+<div class="w3-content" style="max-width:1400px">
+
+<!-- Header -->
+<header class="w3-container w3-center w3-padding-32"> 
+  <h1><b>MEETUP</b></h1>
+  <p>Connect with your DL community here!! <span class="w3-tag">Test</span></p>
+</header>
+
+
+<!-- Grid -->
+<div class="w3-row">
+
+<!-- Blog entries -->
+<div class="w3-col l8 s12">
+  <!-- Blog entry -->
+  <div class="w3-card-4 w3-margin w3-white">
+    <img src="http://static1.squarespace.com/static/528d9e1ce4b04fc308327f74/t/52912729e4b0af26b637f39d/1523656013388/" alt="Nature" style="width:100%">
+    <div class="w3-container">
+      <h3><b>MEETUP:(Pinned by admin)</b></h3>
+    </div>
+    <div class="w3-container">
+      <p>Hiya folks! Here, you can see various events and stuff that other members are up to. If it's a big rides, and you need rides, sign up for a ride!!! </p>
+      <div class="w3-row">
+        <div class="w3-col m8 s12">
+          <p><button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></button></p>
+        </div>
+        <div class="w3-col m4 w3-hide-small">
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <!-- Blog entry -->
+  <% Event.all.each do |f| %>
+  <div class="w3-card-4 w3-margin w3-white">
+  <img src="https://brightcove04pmdo-a.akamaihd.net/5104226627001/5104226627001_5230047963001_5203640497001-vs.jpg?pubId=5104226627001&videoId=5203640497001" alt="Canada" style="width:100%">
+    <div class="w3-container">
+      <h3>Post made by:</h3>
+      <%= User.find(f.user_id).firstName %>
+      <h5><b>Event title:</b> </h5> <h1><%= f.title %></h1>
+    </div>
+    <div class="w3-container">
+      <p><%= f.description %></p>
+      <div class="w3-row">
+      	<h3>People who can drive</h3>
+	<br>
+	<%= f.drivers %>
+	</br>
+	<h3>People who need rides</h3>
+	<br>
+	<%= f.riders %>
+	</br>
+	<li><%= link_to 'Click here to sign up for rides for this event', rides_path(:id => f.id) %></li>
+        <div class="w3-col m8 s12">
+          <p><button class="w3-button w3-padding-large w3-white w3-border"><b>Sign up for rides »</b></button></p>
+        </div>
+        <div class="w3-col m4 w3-hide-small">
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+<!-- END BLOG ENTRIES -->
+</div>
+
+<!-- Introduction menu -->
+<div class="w3-col l4">
+  <!-- About Card -->
+  <div class="w3-card w3-margin w3-margin-top">
+  <img src="https://vangogh.teespring.com/shirt_pic/1442877/1258011/6/2439/480x9999/back.jpg?v=2014-10-14-23-39" style="width:100%">
+    <div class="w3-container w3-white">
+      <h4><b>MEETUP</b></h4>
+      <p>Hiya folks! Here, you can see various events and stuff that other members are up to. If it's a big rides, and you need rides, sign up for a ride!!!</p>
+    </div>
+  </div><hr>
+  
+<!-- END Introduction Menu -->
+</div>
+
+<!-- END GRID -->
+</div><br>
+
+<!-- END w3-content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
+  <button class="w3-button w3-black w3-disabled w3-padding-large w3-margin-bottom">Previous</button>
+  <button class="w3-button w3-black w3-padding-large w3-margin-bottom">Next »</button>
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>  
+
+</body>
+</html>
+
+<% Event.all.each do |f| %>
+	<h2>Event title:</h2>
+	<h1><%= f.title %></h1>
+	<h3>Post made by:</h3>
+	<%= User.find(f.user_id).firstName %>
+	<br>
+	<h3>Event Details:</h3>
+	<%= f.description %>
+	</br>
+	<h3>People who can drive</h3>
+	<br>
+	<%= f.drivers %>
+	</br>
+	<h3>People who need rides</h3>
+	<br>
+	<%= f.riders %>
+	</br>
+	<li><%= link_to 'Click here to sign up for rides for this event', rides_path(:id => f.id) %></li>
+<% end %>

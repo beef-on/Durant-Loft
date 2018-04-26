@@ -13,9 +13,13 @@ class UsersController < ApplicationController
   def form
   end
 
-  # def events
-  #    @user.events.create(event_params)
-  # end
+  def event
+    @event = Event.new(event_params)
+    @event.user_id = current_user.id
+    @event.save
+    redirect_to current_user_path(current_user.id)
+     # @user.events.create(event_params)
+  end
 
   
 
@@ -90,5 +94,8 @@ class UsersController < ApplicationController
     #may add two params, email and encrypted_password
     def user_params
       params.permit(:firstName, :lastName, :year, :manner, :admin)
+    end
+    def event_params
+      params.permit(:event).permit(:title, :description, :need_rides)
     end
 end
