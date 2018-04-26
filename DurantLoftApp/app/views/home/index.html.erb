@@ -12,30 +12,14 @@
 <div class="w3-top">
   <div class="w3-bar w3-white w3-wide w3-padding w3-card">
 
-
-    <!-- <%= button_to "Home", index_path, :class => "button large", :method => :patch %> -->
-    <!--<a href="#home" class="w3-bar-item w3-button">Home</a>-->
-    <a href="/" class="w3-bar-item w3-button">Home</a>
-    <a href="#about" class="w3-bar-item w3-button">About</a>
-
-    <a href="inventory" class="w3-bar-item w3-button">Inventory</a>
-    <a href="shifts" class="w3-bar-item w3-button">Shifts</a>
-    <a href="http://gracepointonline.org" class="w3-bar-item w3-button">Gracepoint</a>
-    <a href="http://koinberkeley.org" class="w3-bar-item w3-button">Gryffindor!</a>
-    <a href="http://a2fberkeley.org" class="w3-bar-item w3-button">Ravenclaw!</a>
-    <a href="events" class="w3-bar-item w3-button">MEETUPS</a>
-    <!-- <li><%= link_to 'Create a meetup.', events_path %></li> -->
-    <%= button_to "Create a meetup!", events_path, :class => "button medium", :method => :patch %>
-
     <%= link_to 'Home', root_path, class: "w3-bar-item w3-button" %>
-    <%= link_to 'Inventory', inventory_path, class: "w3-bar-item w3-button" %>
-    <%= link_to 'Shifts', shifts_path, class: "w3-bar-item w3-button" %>
     <%= link_to 'Gracepoint', "http://gracepointonline.org", class: "w3-bar-item w3-button" %>
-    <%= link_to 'Koinonia', "http://koinberkeley.org", class: "w3-bar-item w3-button" %>
-    <%= link_to 'a2f', "http://a2fberkeley.org", class: "w3-bar-item w3-button" %>
+    <%= link_to 'Meetups', events_path, class: "w3-bar-item w3-button" %>
+    <%= link_to 'Inventory', inventory_path, class: "w3-bar-item w3-button" %>
 
      <% if user_signed_in? %>
       <% if current_user.manner or current_user.admin %>
+        <%= link_to 'Shifts', shifts_path, class: "w3-bar-item w3-button" %>
         <a href="security" class="w3-bar-item w3-button">Security</a>
       <% end %>
     <% end %>
