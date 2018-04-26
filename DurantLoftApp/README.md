@@ -36,9 +36,3 @@ Item
 - Brandon Fong: Devise, shifts, seeds
 - Emmett Ling: front end, inventory
 - Joshua Yang: meetup (events), front end
-=======
-- Josh: front end, security
-- Brandon: Devise, shifts, seeds
-- Emmett: front end, inventory, security
-- Joshua: meetup, front end
->>>>>>> 707d4570b990513aea0950f7c49c4f84ba4a1cb4
