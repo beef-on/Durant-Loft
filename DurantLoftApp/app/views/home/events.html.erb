@@ -26,12 +26,13 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif, background-color:coral;
         <a href="security" class="w3-bar-item w3-button">Security</a>
       <% end %>
     <% end %>
+    <%= button_to "Create a meetup!", events_path, :class => "w3-bar-item w3-button", :method => :patch %>
 
     <!-- Float links to the right. Hide them on small screens -->
     <div class="w3-right w3-hide-small">
         <% if user_signed_in? %>
           <%= link_to 'Edit Your User', edit_user_registration_path, class: "w3-bar-item w3-button" %>
-          <%= link_to 'Log Out', destroy_user_session_path, class: "w3-bar-item w3-button", :method=>'delete' %><
+          <%= link_to 'Log Out', destroy_user_session_path, class: "w3-bar-item w3-button", :method=>'delete' %>
         <% else %>
           <%= link_to 'Log In', new_user_session_path, class: "w3-bar-item w3-button" %>
           <%= link_to 'Sign up', new_user_registration_path, class: "w3-bar-item w3-button" %>
@@ -67,13 +68,6 @@ and is wrapped around the whole page content, except for the footer in this exam
     </div>
     <div class="w3-container">
       <p>Hiya folks! Here, you can see various events and stuff that other members are up to. If it's a big rides, and you need rides, sign up for a ride!!! </p>
-      <div class="w3-row">
-        <div class="w3-col m8 s12">
-          <p><button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></button></p>
-        </div>
-        <div class="w3-col m4 w3-hide-small">
-        </div>
-      </div>
     </div>
   </div>
   <hr>
@@ -91,27 +85,28 @@ and is wrapped around the whole page content, except for the footer in this exam
     	<h5>Details:</h5>
       <p><%= f.description %></p>
       <div class="w3-row">
-      	<h3>People who can drive</h3>
-	<br>
-  <% f.users.each do |user| %>
-  <% if user.driver %>
-	<%= user.firstName + " " + user.lastName%>
+  <% if f.need_rides %>
+    <h3>People who can drive</h3>
+    <% f.users.each do |user| %>
+      <% if user.driver %>
+        <br>
+      	<%= user.firstName + " " + user.lastName %>
+      	</br>
+      <% end %>
+    <% end %>
+  	<h3>People who need rides</h3>
+    <% f.users.each do |user| %>
+      <% if !user.driver %>
+        <br>
+        <%= user.firstName + " " + user.lastName%>
+        </br>
+      <% end %>
+    <% end %>
+    <div class="w3-col m8 s12">
+  <p><button class="w3-button w3-padding-large w3-white w3-border"><b><%= link_to 'Click here to sign up for rides for this event', rides_path(:id => f.id,:user_id => current_user.id) %></b></button></p>
+  </div>
+  <% else %>
   <% end %>
-  <% end %>
-	</br>
-	<h3>People who need rides</h3>
-  <br>
-  <% f.users.each do |user| %>
-  <% if !user.driver %>
-  <%= user.firstName + " " + user.lastName%>
-  <% end %>
-  <% end %>
-  </br>
-	<br>
-	</br>
-	<div class="w3-col m8 s12">
-	<p><button class="w3-button w3-padding-large w3-white w3-border"><b><%= link_to 'Click here to sign up for rides for this event', rides_path(:id => f.id,:user_id => current_user.id) %></b></button></p>
-	</div>
         <div class="w3-col m4 w3-hide-small">
         </div>
       </div>
@@ -149,22 +144,10 @@ and is wrapped around the whole page content, except for the footer in this exam
 </body>
 </html>
 
-<% Event.all.each do |f| %>
-	<h2>Event title:</h2>
-	<h1><%= f.title %></h1>
-	<h3>Post made by:</h3>
-	<%= User.find(f.user_id).firstName %>
-	<br>
-	<h3>Event Details:</h3>
-	<%= f.description %>
-	</br>
-	<h3>People who can drive</h3>
-	<br>
-	<%= f.drivers %>
-	</br>
-	<h3>People who need rides</h3>
-	<br>
-	<%= f.riders %>
-	</br>
-	<li><%= link_to 'Click here to sign up for rides for this event', rides_path(:id => f.id) %></li>
-<% end %>
+<!--  <div class="w3-row">
+        <div class="w3-col m8 s12">
+          <p><button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></button></p>
+        </div>
+        <div class="w3-col m4 w3-hide-small">
+        </div>
+      </div> -->
