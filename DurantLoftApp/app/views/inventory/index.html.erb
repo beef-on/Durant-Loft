@@ -35,6 +35,19 @@
   </div>
 </div>
 
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1400px; max-height:1200px;" id="home">
+  <!--<img src="durantloft.jpg" alt="I can't get the image to show">-->
+  <!--<img class="w3-image" src="/w3images/architect.jpg" alt="Architecture" width="1500" height="800">-->
+  <%= image_tag("DLfrontside.jpg", :alt => "Durant Loft", style: 'height:100%;width:100%;') %>
+  <div class="w3-display-middle w3-margin-top w3-center">
+    <!-- <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>Durant</b></span> <span class="w3-hide-small w3-text-orange">Loft</span></h1> -->
+    <h1 class="w3-xxlarge w3-text-orange">Durant</span> <span class="w3-hide-small w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>Loft</b></span></h1>
+  </div>
+</header>
+
+
 <!-- Page content -->
 <div class="w3-content w3-padding" style="max-width:1564px">
 
@@ -66,74 +79,79 @@
 <h3 class="w3-border-bottom w3-border-dark-grey w3-padding-16">Inventory</h3>
 </b>
 
-<h3 class="w3-border-bottom w3-border-dark-grey w3-padding-16">
+<h3 class="w3-border-bottom w3-border-grey w3-padding-16">
 Audio/Visual</br>
 </h3>
 
 <% @items.each do |t| %>
 <% if t.category == "Audio/Visual" %>
-    <h4><%= t.name %> </h4> 
-    <%= button_to "Remove", destroy_item_path(id: t.id), class: "w3-button w3-light-grey w3-section", :method => :patch %>
+    <h4>
+    <%= button_to t.name, destroy_item_path(id: t.id), class: "w3-button w3-dark-grey w3-section", :method => :patch %>
+    </h4>
     <% end %>
   <% end %>
 
-<h3 class="w3-border-bottom w3-border-dark-grey w3-padding-16">
+<h3 class="w3-border-bottom w3-border-grey w3-padding-16">
 Lost and Found </br>
 </h3>
 
 <% @items.each do |t| %>
 <% if t.category == "Lost and Found" %>
-    <h3><%= t.name %> </h3>
-    <%= button_to "Remove", destroy_item_path(id: t.id), class: "w3-button w3-light-grey w3-section", :method => :patch %>
-    <% end %>
-  <% end %>
+<h4>
+<%= button_to t.name, destroy_item_path(id: t.id), class: "w3-button w3-dark-grey w3-section", :method => :patch %>
+</h4>
+<% end %>
+<% end %>
 
-<h3 class="w3-border-bottom w3-border-dark-grey w3-padding-16">
+<h3 class="w3-border-bottom w3-border-grey w3-padding-16">
 Other </br>
 </h3>
 
 <% @items.each do |t| %>
 <% if t.category == "Other" %>
-    <h3><%= t.name %> </h3>
-    <%= button_to "Remove", destroy_item_path(id: t.id), class: "w3-button w3-light-grey w3-section", :method => :patch %>
-    <% end %>
-  <% end %>
+<h4>
+<%= button_to t.name, destroy_item_path(id: t.id), class: "w3-button w3-dark-grey w3-section", :method => :patch %>
+</h4>
+<% end %>
+<% end %>
 
-<h3 class="w3-border-bottom w3-border-dark-grey w3-padding-16">
+<h3 class="w3-border-bottom w3-border-grey w3-padding-16">
 Books/Games</br>
 </h3>
 
 <% @items.each do |t| %>
-<% if t.category == "Books/Games" %>
-    <h3><%= t.name %> </h3>
-    <%= button_to "Remove", destroy_item_path(id: t.id), class: "w3-button w3-light-grey w3-section", :method => :patch %>
-    <% end %>
-  <% end %>
+<% if t.category == "Games/Books" %>
+<h4>
+<%= button_to t.name, destroy_item_path(id: t.id), class: "w3-button w3-dark-grey w3-section", :method => :patch %>
+</h4>
+<% end %>
+<% end %>
 
-<h3 class="w3-border-bottom w3-border-dark-grey w3-padding-16">
+<h3 class="w3-border-bottom w3-border-grey w3-padding-16">
 Events
 </h3> </br>
 
 <% @items.each do |t| %>
 <% if t.category == "Events" %>
-    <h3><%= t.name %> </h3>
-    <%= button_to "Remove", destroy_item_path(id: t.id), class: "w3-button w3-light-grey w3-section", :method => :patch %>
-    <% end %>
-  <% end %>
+<h4>
+<%= button_to t.name, destroy_item_path(id: t.id), class: "w3-button w3-dark-grey w3-section", :method => :patch %>
+</h4>
+<% end %>
+<% end %>
 
 <h3 class="w3-border-bottom w3-border-dark-grey w3-padding-16">
 All Items
 </h3> </br>
 
           <% @items.each do |t| %>
-            <h3><%= t.name %> </h3>
-            <h3><%= t.category %> </h3>
-            <%= button_to "Remove", destroy_item_path(id: t.id), class: "w3-button w3-light-grey w3-section", :method => :patch %>
+            <h4><%= t.name %> </h4>
+            <%= button_to "Remove", destroy_item_path(id: t.id), class: "w3-button w3-dark-grey w3-section", :method => :patch %>
             <!--
             <button class="w3-button w3-black w3-section" type="submit">
               <i class="fa fa-paper-plane"></i> CHECKOUT ITEM
             </button>
             -->
+            <h3 class="w3-border-bottom w3-border-grey w3-padding-4">
             <% end %>
   </div>
 
