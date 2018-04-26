@@ -80,8 +80,7 @@ and is wrapped around the whole page content, except for the footer in this exam
       <h3>Post made by:</h3>
       <%= User.find(f.user_id).firstName + " " + User.find(f.user_id).lastName %>
       <h5><b>Event title: </b> </h5> <h6><%= f.title %></h6>
-          <h5><b>Event time: </b> </h5> <h6><%= f.time %></h6>
-
+      <h5><b>Event time: </b> </h5> <h6><%= f.time %></h6>
     </div>
     <div class="w3-container">
     	<h5>Details:</h5>
