@@ -64,7 +64,7 @@ class ItemsController < ApplicationController
   def destroy
     @item.destroy
     respond_to do |format|
-      format.html { redirect_to items_url, notice: 'Item was successfully destroyed.' }
+      format.html { redirect_to inventory_path, notice: 'Item was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -72,9 +72,7 @@ class ItemsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_item
-      @item = Item.find(params[:name])
-      #original Item.find(params[:id])
-      #new Item.find(params[:name])
+      @item = Item.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

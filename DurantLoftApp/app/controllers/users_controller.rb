@@ -27,8 +27,6 @@ class UsersController < ApplicationController
   #   @user.manner
   # end
 
-
-
   # GET /users/1
   # GET /users/1.json
   def show
@@ -93,7 +91,7 @@ class UsersController < ApplicationController
     #removed "require(:user)" for now
     #may add two params, email and encrypted_password
     def user_params
-      params.permit(:firstName, :lastName, :year, :manner, :admin)
+      params.permit(:firstName, :lastName, :year, :manner, :admin, :voted)
     end
     def event_params
       params.permit(:event).permit(:title, :description, :need_rides)

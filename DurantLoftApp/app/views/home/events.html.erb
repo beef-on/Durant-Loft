@@ -53,10 +53,12 @@ and is wrapped around the whole page content, except for the footer in this exam
   <img src="https://brightcove04pmdo-a.akamaihd.net/5104226627001/5104226627001_5230047963001_5203640497001-vs.jpg?pubId=5104226627001&videoId=5203640497001" alt="Canada" style="width:100%">
     <div class="w3-container">
       <h3>Post made by:</h3>
-      <%= User.find(f.user_id).firstName %>
-      <h5><b>Event title:</b> </h5> <h1><%= f.title %></h1>
+      <%= User.find(f.user_id).firstName + " " + User.find(f.user_id).lastName %>
+      <h5><b>Event title: </b> </h5> <h6><%= f.title %></h6>
     </div>
+    <h5><b>Event time: </b> </h5> <h6><%= f.time %></h6>
     <div class="w3-container">
+    	<h5>Details:</h5>
       <p><%= f.description %></p>
       <div class="w3-row">
       	<h3>People who can drive</h3>
@@ -67,10 +69,9 @@ and is wrapped around the whole page content, except for the footer in this exam
 	<br>
 	<%= f.riders %>
 	</br>
-	<li><%= link_to 'Click here to sign up for rides for this event', rides_path(:id => f.id) %></li>
-        <div class="w3-col m8 s12">
-          <p><button class="w3-button w3-padding-large w3-white w3-border"><b>Sign up for rides »</b></button></p>
-        </div>
+	<div class="w3-col m8 s12">
+	<p><button class="w3-button w3-padding-large w3-white w3-border"><b><%= link_to 'Click here to sign up for rides for this event', rides_path(:id => f.id) %></b></button></p>
+	</div>
         <div class="w3-col m4 w3-hide-small">
         </div>
       </div>
@@ -84,10 +85,10 @@ and is wrapped around the whole page content, except for the footer in this exam
 <div class="w3-col l4">
   <!-- About Card -->
   <div class="w3-card w3-margin w3-margin-top">
-  <img src="https://vangogh.teespring.com/shirt_pic/1442877/1258011/6/2439/480x9999/back.jpg?v=2014-10-14-23-39" style="width:100%">
+  <img src="https://avatars2.githubusercontent.com/u/28812028?s=460&v=4 style="width:100%">
     <div class="w3-container w3-white">
-      <h4><b>MEETUP</b></h4>
-      <p>Hiya folks! Here, you can see various events and stuff that other members are up to. If it's a big rides, and you need rides, sign up for a ride!!!</p>
+      <h4><b>Moderator:</b></h4>
+      <p>Hi!!!I'm Emmett, and I'll be your Admin for today! Hope you all have a great time! If any of you guys are in Data 8, HMU!</p>
     </div>
   </div><hr>
   

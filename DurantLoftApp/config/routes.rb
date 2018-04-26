@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   get 'home/index'
+  get "shifts/showdate/:date", to: "shifts#showdate", as: "showdate_shift"
 
   resources :shifts
   resources :items
@@ -20,8 +21,27 @@ Rails.application.routes.draw do
   post "home/meetup", to: "home#index"
   post "users/event", to: "home#index"
   post "inventory/new", to: "items#create", as: "create_item"
-  delete "inventory/remove", to: "items#destroy", as: "destroy_item"
+
+  patch "inventory/remove", to: "items#destroy", as: "destroy_item"
+  #get "inventory/remove", to: "item#destroy", as: "destroy_item"
+  # ----
+  # get "/koinberkeley.org", to: "koinberkeley.org"
+# =======
+
+  # patch "bum", to: "users#bum", as: "bum"
+  # patch "form", to: "users#new", as: "form"
+  # get "form", to: "users#new"
+
+
   patch "index", to: "home#index", as: "index"
+
+
+# <<<<<<< HEAD
+# >>>>>>> 431158230486fa1e1e4816bf85e52e232fdd9211
+# =======
+get "security", to: "security#index", as: "security"
+
+
   patch "inventory/index", to: "home#index", as: "home"
   get "inventory", to: "inventory#index", as: "inventory"
 

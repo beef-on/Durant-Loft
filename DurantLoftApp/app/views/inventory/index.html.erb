@@ -6,83 +6,146 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <body>
 
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
 
-  <!-- Navbar (sit on top) -->
-  <div class="w3-top">
-    <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <%= link_to 'Home', root_path, class: "w3-bar-item w3-button" %>
+    <%= link_to 'Inventory', inventory_path, class: "w3-bar-item w3-button" %>
+    <%= link_to 'Shifts', shifts_path, class: "w3-bar-item w3-button" %>
+    <%= link_to 'Gracepoint', "http://gracepointonline.org", class: "w3-bar-item w3-button" %>
+    <%= link_to 'Koinonia', "http://koinberkeley.org", class: "w3-bar-item w3-button" %>
+    <%= link_to 'a2f', "http://a2fberkeley.org", class: "w3-bar-item w3-button" %>
 
+     <% if user_signed_in? %>
+      <% if current_user.manner or current_user.admin %>
+        <a href="security" class="w3-bar-item w3-button">Security</a>
+      <% end %>
+    <% end %>
 
-      <!-- <%= button_to "Home", index_path, :class => "button large", :method => :patch %> -->
-
-
-      <!--<a href="#home" class="w3-bar-item w3-button">Home</a>-->
-      <a href="/" class="w3-bar-item w3-button">Home</a>
-      <a href="#about" class="w3-bar-item w3-button">About</a>
-
-
-      <a href="inventory" class="w3-bar-item w3-button">Inventory</a>
-      <a href="shifts" class="w3-bar-item w3-button">Shifts</a>
-      <a href="http://gracepointonline.org" class="w3-bar-item w3-button">Gracepoint</a>
-      <a href="http://koinberkeley.org" class="w3-bar-item w3-button">Gryffindor!</a>
-      <a href="http://a2fberkeley.org" class="w3-bar-item w3-button">Ravenclaw!</a>
-      <!-- li><%= link_to 'Visit the best group in GP', "http://koinberkeley.org" %></li>
-      <li><%= link_to 'Visit the 2nd best group in GP', "http://a2fberkeley.org" %></li>
-   -->
-
-      <!-- Float links to the right. Hide them on small screens -->
-      <div class="w3-right w3-hide-small">
-          <% if user_signed_in? %>
-            <li><%= link_to 'Edit Your User', edit_user_registration_path %></li>
-            <a href="users/edit" class="w3-bar-item w3-button">Edit Your Account</a>
-            <li><%= link_to 'Log Out', destroy_user_session_path, :method=>'delete' %></li>
-          <% else %>
-            <li><%= link_to 'Log In', new_user_session_path %></li>
-            <li><%= link_to 'Sign up', new_user_registration_path %></li>
-            <li><%= link_to 'Log Out', destroy_user_session_path, :method=>'delete' %></li>
-
-
-          <% end %>
-      </div>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+        <% if user_signed_in? %>
+          <%= link_to 'Edit Your User', edit_user_registration_path, class: "w3-bar-item w3-button" %>
+          <%= link_to 'Log Out', destroy_user_session_path, class: "w3-bar-item w3-button", :method=>'delete' %><
+        <% else %>
+          <%= link_to 'Log In', new_user_session_path, class: "w3-bar-item w3-button" %>
+          <%= link_to 'Sign up', new_user_registration_path, class: "w3-bar-item w3-button" %>
+        <% end %>
     </div>
   </div>
+</div>
 
   <!-- Header -->
   <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
     <%= image_tag("DLfrontside.jpg", :alt => "Durant Loft", style: 'height:100%;width:100%;') %>
     <div class="w3-display-middle w3-margin-top w3-center">
-      <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>DL</b></span> <span class="w3-hide-small w3-text-orange">Citizens</span></h1>
+      <h1 class="w3-xxlarge w3-text-orange">Durant</span> <span class="w3-hide-small w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>Loft</b></span></h1>
     </div>
   </header>
 
 <!-- Page content -->
 <div class="w3-content w3-padding" style="max-width:1564px">
 
-
+<center>
   <!-- Contact Section -->
   <div class="w3-container w3-padding-32" id="contact">
-    <h3 class="w3-border-bottom w3-border-dark-grey w3-padding-16">Inventory</h3>
-    <p> Ay, I remember syrup sandwiches and crime allowances. </p>
-
+    <h3 class="w3-border-bottom w3-border-dark-grey w3-padding-16">Welcome to the Inventory!</h3>
+    <h4 class="w3-padding-2"> Hello! </br>
+        If you are permanently removing items, please use the remove button. </br>
+        If you are borrowing stuff with intent to return it, please use the checkout button and leave a note when you'll put it back. </br>
+    </h4>
+</center>
       <h3 class="w3-border-bottom w3-border-dark-grey w3-padding-16"> Add an item to storage </h3>
 
           <%= form_tag create_item_path do %>
-            <%= label_tag(:name, "Name") %>
-            <%= text_field_tag(:name) %>
-            <%= label_tag(:category, "Category") %>
-            <%= text_field_tag(:category) %>
-            <%= submit_tag("Add Item") %>
+            <h4 class="w3-padding-2"> <%= label_tag(:name, "Item") %> </h4>
+            <h4 class="w3-padding-2"> <%= text_field_tag(:name) %> </h4>
+            <h4 class="w3-padding-2"> <%= label_tag(:category, "Category") %> </h4>
+            <h4 class="w3-padding-2"><%= select_tag(:category, options_for_select([["Audio/Visual"],["Events"],["Lost and Found"], ["Games/Books"], ["Other"]])) %></h4>
+            <%= submit_tag("Add Item", class:"w3-button w3-dark-grey w3-section") %>
+
             <% end %>
 
 
-          <% @items.each do |t| %>
-            <%= t.name %>
-            <%= t.category %>
-            <li><%= link_to 'Remove', destroy_item_path, :method=>'delete' %></li>
 
+</br>
+</br>
+<b>
+<h3 class="w3-border-bottom w3-border-dark-grey w3-padding-16">Inventory</h3>
+</b>
+
+<h3 class="w3-border-bottom w3-border-dark-grey w3-padding-16">
+Audio/Visual</br>
+</h3>
+
+
+
+          <% @items.each do |t| %>
+          <% if t.category == "Audio/Visual" %>
+              <h4><%= t.name %> </h4> 
+              <%= button_to "Remove", destroy_item_path(id: t.id), class: "w3-button w3-light-grey w3-section", :method => :patch %>
+              <% end %>
+            <% end %>
+
+
+<h3 class="w3-border-bottom w3-border-dark-grey w3-padding-16">
+Lost and Found </br>
+</h3>
+
+<% @items.each do |t| %>
+<% if t.category == "Lost and Found" %>
+    <h3><%= t.name %> </h3>
+    <%= button_to "Remove", destroy_item_path(id: t.id), class: "w3-button w3-light-grey w3-section", :method => :patch %>
+    <% end %>
+  <% end %>
+
+<h3 class="w3-border-bottom w3-border-dark-grey w3-padding-16">
+Other </br>
+</h3>
+
+<% @items.each do |t| %>
+<% if t.category == "Other" %>
+    <h3><%= t.name %> </h3>
+    <%= button_to "Remove", destroy_item_path(id: t.id), class: "w3-button w3-light-grey w3-section", :method => :patch %>
+    <% end %>
+  <% end %>
+
+<h3 class="w3-border-bottom w3-border-dark-grey w3-padding-16">
+Books/Games</br>
+</h3>
+
+<% @items.each do |t| %>
+<% if t.category == "Books/Games" %>
+    <h3><%= t.name %> </h3>
+    <%= button_to "Remove", destroy_item_path(id: t.id), class: "w3-button w3-light-grey w3-section", :method => :patch %>
+    <% end %>
+  <% end %>
+
+<h3 class="w3-border-bottom w3-border-dark-grey w3-padding-16">
+Events
+</h3> </br>
+
+<% @items.each do |t| %>
+<% if t.category == "Events" %>
+    <h3><%= t.name %> </h3>
+    <%= button_to "Remove", destroy_item_path(id: t.id), class: "w3-button w3-light-grey w3-section", :method => :patch %>
+    <% end %>
+  <% end %>
+
+<h3 class="w3-border-bottom w3-border-dark-grey w3-padding-16">
+All Items
+</h3> </br>
+
+          <% @items.each do |t| %>
+            <h3><%= t.name %> </h3>
+            <h3><%= t.category %> </h3>
+            <%= button_to "Remove", destroy_item_path(id: t.id), class: "w3-button w3-light-grey w3-section", :method => :patch %>
+            <!--
             <button class="w3-button w3-black w3-section" type="submit">
               <i class="fa fa-paper-plane"></i> CHECKOUT ITEM
             </button>
-            <br>
+            -->
             <% end %>
   </div>
 

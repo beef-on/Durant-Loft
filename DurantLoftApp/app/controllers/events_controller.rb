@@ -37,7 +37,7 @@ class EventsController < ApplicationController
 
 
 	def create
-		@event = Event.create(title:params[:event][:title],description:params[:event][:description], need_rides:params[:event][:need_rides])
+		@event = Event.create(title:params[:event][:title],description:params[:event][:description], need_rides:params[:event][:need_rides],time:params[:event][:time])
 	    @event.user_id = current_user.id
 	    @event.save!
 	respond_to do |format|
