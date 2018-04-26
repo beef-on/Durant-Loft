@@ -6,7 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-<<<<<<< HEAD
 # Make Users
 [['Brandon', 'Fong', true, true], ['Emmett', 'Ling', false, false], ['Josh', 'Asuncion', true, false]].each do |first, last, manner, admin|
   User.create(
@@ -41,5 +40,3 @@ end
     category: category
   )
 end
-=======
->>>>>>> b7db2a141a87ba7fc57f419134f7c5adcffa9ed8
