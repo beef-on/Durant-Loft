@@ -40,31 +40,50 @@
 </br>
 </br>
 
-<h1>Shifts</h1>
+<div class="w3-content w3-padding" style="max-width:1564px">
+<center>
+<h3 class="w3-border-bottom w3-border-dark-grey w3-padding-16">Shifts</h3>
 
-<%= month_calendar events: @shifts do |date, shifts| %>
-  <%= link_to date, showdate_shift_path(date) %>
+  <% if user_signed_in? %>
+    <% if current_user.manner or current_user.admin %>
 
-  <!--<% shifts.each do |shift| %>
-    <% if shift.start.strftime("%Y-%m-%d") == date.strftime("%Y-%m-%d") %>
-      <div>
-        <% if shift.manner1_id != nil %>
-            <td><%= User.find(shift.manner1_id).firstName %></td>
+      <%= month_calendar events: @shifts do |date, shifts| %>
+        <%= link_to date, showdate_shift_path(date) %>
+
+        <!--<% shifts.each do |shift| %>
+          <% if shift.start.strftime("%Y-%m-%d") == date.strftime("%Y-%m-%d") %>
+            <div>
+              <% if shift.manner1_id != nil %>
+                  <td><%= User.find(shift.manner1_id).firstName %></td>
+                <% end %>
+            </div>
           <% end %>
-      </div>
+        <% end %>-->
+      <% end %>
+
+      <br>
+      <%= link_to 'New Shift', new_shift_path, :class => "w3-button w3-white w3-border" %>
+      <!-- , class: "w3-bar-item w3-button" -->
+
+      </br>
+      </br>
+      </br>
+      </br>
+
+    <% else %>
+     </br>
+      Insufficient Privileges.  Be more faithful in the little things.
+      </br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
     <% end %>
-  <% end %>-->
-<% end %>
 
-<br>
+  <% else %>
+   </br>
+    Insufficient Privileges.  Be more faithful in the little things.
+    </br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
+  <% end %>
 
-<%= link_to 'New Shift', new_shift_path %>
-<!-- , class: "w3-bar-item w3-button" -->
-
-</br>
-</br>
-</br>
-</br>
+  </center>
+  </div>
 
 <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-16">

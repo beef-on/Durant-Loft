@@ -43,6 +43,19 @@ class EventsController < ApplicationController
 		end
     end
 
+    def update
+    	user = User.find(params[:user_id])
+    	event = Event.find(params[:id])
+
+    	if user.driver
+    		event.drivers << user.firstName
+		else
+			event.riders << user.firstName
+		end
+
+		redirect_to events_path
+    end
+
     private
     
     # Never trust parameters from the scary internet, only allow the white list through.

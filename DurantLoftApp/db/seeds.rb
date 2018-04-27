@@ -7,7 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # Make Users
-[['Brandon', 'Fong', true, true,false], ['Emmett', 'Ling', false, false,false], ['Josh', 'Asuncion', true, false,true]].each do |first, last, manner, admin, driver|
+
+[['Brandon', 'Fong', true, true, false], ['Emmett', 'Ling', false, false, false], ['Josh', 'Asuncion', true, false, true]].each do |first, last, manner, admin, driver|
   User.create(
     firstName: first,
     lastName: last,
@@ -33,11 +34,12 @@ end
   end
 end
 
-[['Avalon', 'Books/Games', true, true], ['Ben\'s Acoustic Guitar', 'Audio/Visual', false, false], ['ESV Study Bible', 'Books/Games', true, false]].each do |called, category, check, temp|
+[['Mac Charger', 'Lost And Found', false, false], ['Avalon', 'Books/Games', true, true], ['Ben\'s Acoustic Guitar', 'Audio/Visual', false, false], ['ESV Study Bible', 'Books/Games', true, false]].each do |called, category, check, temp|
   Item.create(
     checkable: check,
     name: called,
     temporary: temp,
-    category: category
+    category: category,
+    checked_out: nil
   )
 end

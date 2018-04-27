@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   patch "home/dt", to: "home#dt", as: "dt"
 
   patch "events", to: "events#events", as: "events"
+  patch "events/:id/:user_id", to: "events#update", as: "edit_event"
   post "events", to: "events#create", as: "event"
   get "/events", to: "home#events"
 
@@ -24,8 +25,7 @@ Rails.application.routes.draw do
   post "users/event", to: "home#index"
   post "inventory/new", to: "items#create", as: "create_item"
   patch "inventory/remove", to: "items#destroy", as: "destroy_item"
-
-
+  get "inventory/:id", to: "items#show", as: "show_item"
 
   patch "index", to: "home#index", as: "index"
 
@@ -35,7 +35,7 @@ Rails.application.routes.draw do
   get "inventory", to: "inventory#index", as: "inventory"
 
   post "rides", to: "events#rides"
-  get "rides", to: "events#rides"
+  get "rides", to: "home#events"
   # post "rides", to: "events#riders"
 
   #Add item

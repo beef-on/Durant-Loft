@@ -26,7 +26,6 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif, background-color:coral;
         <a href="security" class="w3-bar-item w3-button">Security</a>
       <% end %>
     <% end %>
-    <%= button_to "Create a meetup!", events_path, :class => "w3-bar-item w3-button", :method => :patch %>
 
     <!-- Float links to the right. Hide them on small screens -->
     <div class="w3-right w3-hide-small">
@@ -42,16 +41,18 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif, background-color:coral;
 </div>
 
 
-<!-- w3-content defines a container for fixed size centered content, 
+<!-- w3-content defines a container for fixed size centered content,
 and is wrapped around the whole page content, except for the footer in this example -->
 <div class="w3-content" style="max-width:1400px">
 
 <!-- Header -->
-<header class="w3-container w3-center w3-padding-32"> 
+<header class="w3-container w3-center w3-padding-32">
 </br>
 </br>
   <h1><b>MEETUP</b></h1>
   <p>Connect with your DL community here!! <span class="w3-tag">Test</span></p>
+</br>
+  <%= button_to "Create a meetup!", events_path, :class => "w3-button w3-white w3-border", :method => :patch %>
 </header>
 
 
@@ -64,10 +65,10 @@ and is wrapped around the whole page content, except for the footer in this exam
   <div class="w3-card-4 w3-margin w3-white">
     <img src="http://static1.squarespace.com/static/528d9e1ce4b04fc308327f74/t/52912729e4b0af26b637f39d/1523656013388/" alt="Nature" style="width:100%">
     <div class="w3-container">
-      <h3><b>MEETUP:(Pinned by admin)</b></h3>
+      <h3><b>MEETUP: (Pinned by admin)</b></h3>
     </div>
     <div class="w3-container">
-      <p>Hiya folks! Here, you can see various events and stuff that other members are up to. If it's a big rides, and you need rides, sign up for a ride!!! </p>
+      <p>Here, you can see various events and stuff that other members are up to. If it's a big rides, and you need rides, sign up for a ride!!! </p>
     </div>
   </div>
   <hr>
@@ -79,14 +80,14 @@ and is wrapped around the whole page content, except for the footer in this exam
       <h3>Post made by:</h3>
       <%= User.find(f.user_id).firstName + " " + User.find(f.user_id).lastName %>
       <h5><b>Event title: </b> </h5> <h6><%= f.title %></h6>
+      <h5><b>Event time: </b> </h5> <h6><%= f.time %></h6>
     </div>
-    <h5><b>Event time: </b> </h5> <h6><%= f.time %></h6>
     <div class="w3-container">
     	<h5>Details:</h5>
       <p><%= f.description %></p>
       <div class="w3-row">
   <% if f.need_rides %>
-    <h3>People who can drive</h3>
+    <h5>People who can drive</h5>
     <% f.users.each do |user| %>
       <% if user.driver %>
         <br>
@@ -94,7 +95,7 @@ and is wrapped around the whole page content, except for the footer in this exam
       	</br>
       <% end %>
     <% end %>
-  	<h3>People who need rides</h3>
+  	<h5>People who need rides</h5>
     <% f.users.each do |user| %>
       <% if !user.driver %>
         <br>
@@ -103,7 +104,9 @@ and is wrapped around the whole page content, except for the footer in this exam
       <% end %>
     <% end %>
     <div class="w3-col m8 s12">
-  <p><button class="w3-button w3-padding-large w3-white w3-border"><b><%= link_to 'Click here to sign up for rides for this event', rides_path(:id => f.id,:user_id => current_user.id) %></b></button></p>
+      <% if user_signed_in? %>
+    <%= link_to 'Sign Up For Rides', edit_event_path(id: f.id, user_id: current_user.id), method: :patch %>
+  <% end %>
   </div>
   <% else %>
   <% end %>
@@ -119,14 +122,7 @@ and is wrapped around the whole page content, except for the footer in this exam
 <!-- Introduction menu -->
 <div class="w3-col l4">
   <!-- About Card -->
-  <div class="w3-card w3-margin w3-margin-top">
-  <img src="https://avatars2.githubusercontent.com/u/28812028?s=460&v=4 style="width:100%">
-    <div class="w3-container w3-white">
-      <h4><b>Moderator:</b></h4>
-      <p>Hi!!!I'm Emmett, and I'll be your Admin for today! Hope you all have a great time! If any of you guys are in Data 8, HMU!</p>
-    </div>
-  </div><hr>
-  
+
 <!-- END Introduction Menu -->
 </div>
 

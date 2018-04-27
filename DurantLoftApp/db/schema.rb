@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180426095121) do
+ActiveRecord::Schema.define(version: 20180426174812) do
 
   create_table "events", force: :cascade do |t|
     t.string "title"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20180426095121) do
     t.string "name"
     t.boolean "temporary"
     t.string "category"
+    t.boolean "checked_out"
     t.index ["User_id"], name: "index_items_on_User_id"
   end
 
