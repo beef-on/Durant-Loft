@@ -105,7 +105,7 @@ and is wrapped around the whole page content, except for the footer in this exam
     <% end %>
     <div class="w3-col m8 s12">
       <% if user_signed_in? %>
-    <%= link_to 'Sign Up For Rides', edit_event_path(id: f.id, user_id: current_user.id), method: :patch %>
+    <%= link_to 'Sign Up For Rides', rides_path(id: f.id, user_id: current_user.id) %>
   <% end %>
   </div>
   <% else %>

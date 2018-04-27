@@ -35,7 +35,7 @@ Rails.application.routes.draw do
   get "inventory", to: "inventory#index", as: "inventory"
 
   post "rides", to: "events#rides"
-  get "rides", to: "home#events"
+  get "rides", to: "events#rides"
   # post "rides", to: "events#riders"
 
   #Add item
