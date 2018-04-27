@@ -17,6 +17,7 @@ class EventsController < ApplicationController
 		else 
 			puts "Can't. Already signed up for event!"
 		end
+		render 'home/events'
 	end 
 
 	def riders
