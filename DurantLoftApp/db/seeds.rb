@@ -38,6 +38,7 @@ end
     checkable: check,
     name: called,
     temporary: temp,
-    category: category
+    category: category,
+    checked_out: nil
   )
 end
