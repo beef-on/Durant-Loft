@@ -1,7 +1,5 @@
 class Shift < ApplicationRecord
-  belongs_to :manner1, optional: true
-  belongs_to :manner2, optional: true
-  belongs_to :manner3, optional: true
+  has_many :users
   validate :same_date#, :all_different
 
   # def all_different
