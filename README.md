@@ -1,6 +1,8 @@
 # Title: Durant Loft Application #
 **Team Members:** Josh Asuncion, Brandon Fong, Emmett Ling, Joshua Yang
+
 **Demo Link:** https://www.youtube.com/watch?v=HjRlNPhKy8E&feature=youtu.be
+
 **Website URL:** https://durantloft.herokuapp.com/
 
 ## Idea: ##
@@ -36,7 +38,7 @@ Item
 - users can create events to meet up
 - users can be drivers or request rides for events
 
-## Division of Labor:##
+## Division of Labor: ##
 
 - Josh Asuncion: front end, security
 - Brandon Fong: Devise, shifts, seeds
