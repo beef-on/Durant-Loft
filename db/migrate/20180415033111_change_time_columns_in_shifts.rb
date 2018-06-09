@@ -1,6 +1,9 @@
 class ChangeTimeColumnsInShifts < ActiveRecord::Migration[5.1]
   def change
-  	change_column(:shifts, :start, :datetime)
-  	change_column(:shifts, :end, :datetime)
+  	remove_column :shifts, :start
+    remove_column :shifts, :end
+
+  	add_column(:shifts, :start, :datetime)
+  	add_column(:shifts, :end, :datetime)
   end
 end

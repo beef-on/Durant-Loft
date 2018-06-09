@@ -44,10 +44,10 @@ ActiveRecord::Schema.define(version: 20180426174812) do
   end
 
   create_table "shifts", force: :cascade do |t|
-    t.datetime "start"
-    t.datetime "end"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "start"
+    t.datetime "end"
   end
 
   create_table "users", force: :cascade do |t|
