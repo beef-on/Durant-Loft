@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20180426174812) do
   end
 
   create_table "items", force: :cascade do |t|
-    t.integer "User_id"
+    t.integer "user_id"
     t.boolean "checkable"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -40,20 +40,14 @@ ActiveRecord::Schema.define(version: 20180426174812) do
     t.boolean "temporary"
     t.string "category"
     t.boolean "checked_out"
-    t.index ["User_id"], name: "index_items_on_User_id"
+    t.index ["user_id"], name: "index_items_on_user_id"
   end
 
   create_table "shifts", force: :cascade do |t|
-    t.datetime "start"
-    t.datetime "end"
-    t.integer "manner1_id"
-    t.integer "manner2_id"
-    t.integer "manner3_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["manner1_id"], name: "index_shifts_on_manner1_id"
-    t.index ["manner2_id"], name: "index_shifts_on_manner2_id"
-    t.index ["manner3_id"], name: "index_shifts_on_manner3_id"
+    t.datetime "start"
+    t.datetime "end"
   end
 
   create_table "users", force: :cascade do |t|
