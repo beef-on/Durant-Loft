@@ -50,8 +50,8 @@
 
 <p>
   <strong>User:</strong>
-  <% if @item.User_id != nil %>
-  	<%= User.find(@item.User_id).firstName %>
+  <% if @item.user_id != nil %>
+  	<%= User.find(@item.user_id).firstName %>
   <% end %>
 </p>
 
