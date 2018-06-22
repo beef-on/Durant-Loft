@@ -9,11 +9,13 @@
           <span class="login100-form-title p-b-34">
             Log in
           </span>
-          <div class="wrap-input100 rs1-wrap-input100 validate-input m-b-20" data-validate="Type user name">
+          <label class="label-input100" for="password">Email</label>
+          <div class="wrap-input100 validate-input" data-validate = "Type user name">
             <%= f.email_field :email, class: "input100", type: "text", autofocus: true, placeholder: "Email", autocomplete: "email"%>
             <span class="focus-input100"></span>
           </div>
-          <div class="wrap-input100 rs2-wrap-input100 validate-input m-b-20" data-validate="Type password">
+          <label class="label-input100" for="password">Password</label>
+          <div class="wrap-input100">
             <%= f.password_field :password, class: "input100", type: "password", autofocus: true, placeholder: "Password", autocomplete: "off" %>
             <span class="focus-input100"></span>
           </div>

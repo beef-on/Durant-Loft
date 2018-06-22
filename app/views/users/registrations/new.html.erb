@@ -8,7 +8,6 @@
         <span class="contact100-form-title">
           Join Durant Loft!
         </span>
-
         <label class="label-input100" for="first-name">Tell us your name and year *</label>
         <div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Type first name">
           <%= f.text_field :firstName, id: :user_firstName, class: "input100", type:"text", placeholder: "First Name" %>
@@ -22,31 +21,31 @@
           <%= f.number_field :year, id: :user_year, class: "input100", min: 1, max: 4, placeholder: "Year" %>
           <span class="focus-input100"></span>
         </div>
-
         <label class="label-input100" for="email">Enter your email *</label>
         <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
           <%= f.email_field :email, autofocus: true, class: "input100", type:"text", autocomplete: "email", placeholder: "Email" %>
           <span class="focus-input100"></span>
         </div>
-
-        <label class="label-input100" for="phone">Enter phone number</label>
+        <label class="label-input100" for="password">Password (<%= @minimum_password_length %> characters minimum) *</label>
         <div class="wrap-input100">
-          <input id="phone" class="input100" type="text" name="phone" placeholder="Eg. +1 800 000000">
+          <%= f.password_field :password, class: "input100", type: "password", autocomplete: "off", placeholder: "Password" %>
+          <span class="focus-input100"></span>
+        </div>
+        <label class="label-input100" for="password_confirmation">Confirm Password *</label>
+        <div class="wrap-input100">
+          <%= f.password_field :password_confirmation, class: "input100", type: "password", autocomplete: "off", placeholder: "Confirm Password" %>
           <span class="focus-input100"></span>
         </div>
 
-        <label class="label-input100" for="message">Message *</label>
-        <div class="wrap-input100 validate-input" data-validate = "Message is required">
-          <textarea id="message" class="input100" name="message" placeholder="Write us a message"></textarea>
-          <span class="focus-input100"></span>
-        </div>
-
+        <label class="label-inputcheck">Are You A Manner? * <div class="slideThree"><%= f.check_box :manner, class: "slideThree", id: "slideThree" %><label for="slideThree"></label></div></label>
+        
+        <label class="label-inputcheck">Are You A Driver? * <div class="slideFour"><%= f.check_box :driver, class: "slideFour", id: "slideFour"%><label for="slideFour"></label></div></label>
+        
         <div class="container-contact100-form-btn">
-          <button class="contact100-form-btn">
-            Send Message
-          </button>
+            <%= f.submit "Sign up", class: "contact100-form-btn" %>
         </div>
       <% end %> 
+
       <div class="contact100-more flex-col-c-m">
         <div class="flex-w size1 p-b-47">
           <div class="txt1 p-r-25">
@@ -75,7 +74,7 @@
             </span>
 
             <span class="txt3">
-              +1 800 1236879
+              +1 800 123 4567
             </span>
           </div>
         </div>
@@ -98,56 +97,3 @@
       </div>
     </div>
   </div>
-
-
-
-<!-- <h2>Join Durant Loft!</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.text_field :firstName, id: :user_firstName, placeholder: "First Name" %>
-  </div>
-
-  <div class="field">
-    <%= f.text_field :lastName, id: :user_lastName, placeholder: "Last Name" %>
-  </div>
-
-  <div class="field">
-    <%= f.number_field :year, id: :user_year, placeholder: "Year" %>
-  </div> -->
-
-  <div class="field">
-    <%= f.label :Manner? %> 
-    <%= f.check_box :manner, id: :user_manner %>
-  </div>
-
- <!--  <div class="field">
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %>
-  </div> -->
-
-  <div class="field">
-  <%= f.label :Are_you_a_driver? %> 
-  <%= f.check_box :driver, placeholder: "Are_you_a_driver?" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>

@@ -341,6 +341,7 @@ input.input100 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 20px;
 }
 
 .login100-form-btn {
