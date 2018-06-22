@@ -7,27 +7,27 @@
 
 @font-face {
   font-family: Poppins-Regular;
-  src: url('poppins/Poppins-Regular.ttf'); 
+  src: url('../fonts/poppins/Poppins-Regular.ttf'); 
 }
 
 @font-face {
   font-family: Poppins-Medium;
-  src: url('poppins/Poppins-Medium.ttf'); 
+  src: url('../fonts/poppins/Poppins-Medium.ttf'); 
 }
 
 @font-face {
   font-family: Poppins-Bold;
-  src: url('poppins/Poppins-Bold.ttf'); 
+  src: url('../fonts/poppins/Poppins-Bold.ttf'); 
 }
 
 @font-face {
   font-family: Poppins-SemiBold;
-  src: url('poppins/Poppins-SemiBold.ttf'); 
+  src: url('../fonts/poppins/Poppins-SemiBold.ttf'); 
 }
 
 @font-face {
   font-family: Montserrat-Bold;
-  src: url('montserrat/Montserrat-Bold.ttf'); 
+  src: url('../fonts/montserrat/Montserrat-Bold.ttf'); 
 }
 
 
@@ -64,7 +64,6 @@ a:focus {
 
 a:hover {
 	text-decoration: none;
-  color: #333333;
 }
 
 /*---------------------------------------------*/
@@ -101,15 +100,25 @@ textarea:focus, input:focus {
   border-color: transparent !important;
 }
 
-input::-webkit-input-placeholder { color: #999999;}
-input:-moz-placeholder { color: #999999;}
-input::-moz-placeholder { color: #999999;}
-input:-ms-input-placeholder { color: #999999;}
+input:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder { color:transparent; }
+input:focus::-moz-placeholder { color:transparent; }
+input:focus:-ms-input-placeholder { color:transparent; }
 
-textarea::-webkit-input-placeholder { color: #999999;}
-textarea:-moz-placeholder { color: #999999;}
-textarea::-moz-placeholder { color: #999999;}
-textarea:-ms-input-placeholder { color: #999999;}
+textarea:focus::-webkit-input-placeholder { color:transparent; }
+textarea:focus:-moz-placeholder { color:transparent; }
+textarea:focus::-moz-placeholder { color:transparent; }
+textarea:focus:-ms-input-placeholder { color:transparent; }
+
+input::-webkit-input-placeholder { color: #adadad;}
+input:-moz-placeholder { color: #adadad;}
+input::-moz-placeholder { color: #adadad;}
+input:-ms-input-placeholder { color: #adadad;}
+
+textarea::-webkit-input-placeholder { color: #adadad;}
+textarea:-moz-placeholder { color: #adadad;}
+textarea::-moz-placeholder { color: #adadad;}
+textarea:-ms-input-placeholder { color: #adadad;}
 
 /*---------------------------------------------*/
 button {
@@ -133,24 +142,23 @@ iframe {
 [ Text ]*/
 .txt1 {
   font-family: Poppins-Regular;
-  font-size: 13px;
-  line-height: 1.4;
-  color: #999999;
+  font-size: 18px;
+  line-height: 1.2;
+  color: #fff;
 }
 
 .txt2 {
   font-family: Poppins-Regular;
-  font-size: 13px;
-  line-height: 1.4;
-  color: #00ad5f;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #999999;
 }
 
 .txt3 {
   font-family: Poppins-Regular;
   font-size: 15px;
-  line-height: 1.4;
+  line-height: 1.6;
   color: #00ad5f;
-  text-transform: uppercase;
 }
 
 /*==================================================================
@@ -166,14 +174,9 @@ iframe {
 
 
 /*//////////////////////////////////////////////////////////////////
-[ login ]*/
+[ Contact ]*/
 
-.limiter {
-  width: 100%;
-  margin: 0 auto;
-}
-
-.container-login100 {
+.container-contact100 {
   width: 100%;  
   min-height: 100vh;
   display: -webkit-box;
@@ -186,10 +189,11 @@ iframe {
   align-items: center;
   padding: 15px;
   background: #f2f2f2;
+  
 }
 
-.wrap-login100 {
-  width: 1170px;
+.wrap-contact100 {
+  width: 1120px;
   background: #fff;
   overflow: hidden;
   display: -webkit-box;
@@ -204,17 +208,19 @@ iframe {
 }
 
 /*==================================================================
-[ login more ]*/
-.login100-more {
+[ Contact more ]*/
+.contact100-more {
   width: 50%;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-image: url('bg-01.jpg');
+  background-image: url('filler.jpg');
   position: relative;
+  z-index: 0;
+  padding: 30px 15px 0px 15px;
 }
 
-.login100-more::before {
+.contact100-more::before {
   content: "";
   display: block;
   position: absolute;
@@ -223,7 +229,7 @@ iframe {
   height: 100%;
   top: 0;
   left: 0;
-  background: rgba(0,0,0,0.3);
+  background: rgba(0,0,0,0.8);
 }
 
 
@@ -231,7 +237,7 @@ iframe {
 /*==================================================================
 [ Form ]*/
 
-.login100-form {
+.contact100-form {
   width: 50%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -239,22 +245,19 @@ iframe {
   display: -ms-flexbox;
   display: flex;
   flex-wrap: wrap;
-  padding: 303px 65px 40px 65px;
+  padding: 56px 55px 63px 55px;
 }
 
-.login100-form-title {
-  font-family: Poppins-Regular;
-  font-size: 20px;
-  color: #555555;
-  line-height: 1.2;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-align: center;
+.contact100-form-title {
   width: 100%;
   display: block;
+  font-family: Poppins-Regular;
+  font-size: 30px;
+  color: #333333;
+  line-height: 1.2;
+  text-align: center;
+  padding-bottom: 33px;
 }
-
-
 
 /*------------------------------------------------------------------
 [ Input ]*/
@@ -267,13 +270,60 @@ iframe {
 
 .rs1-wrap-input100,
 .rs2-wrap-input100 {
-  width: 50%;
+  width: 38%;
+}
+
+.rs3-wrap-input100 {
+  width: 24%;
 }
 
 .rs2-wrap-input100 {
   border-left: none;
 }
 
+.label-input100 {
+  font-family: Poppins-Regular;
+  font-size: 12px;
+  color: #555555;
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 55px;
+  border: 1px solid #e6e6e6;
+  border-bottom: none; 
+  padding: 10px 25px;
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+
+.label-inputcheck {
+  font-family: Poppins-Regular;
+  font-size: 12px;
+  color: #555555;
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 55px;
+  border: 1px solid #e6e6e6;
+  border-bottom: none; 
+  padding: 10px 25px;
+}
 
 .input100 {
   display: block;
@@ -288,6 +338,13 @@ iframe {
 
 input.input100 {
   height: 55px;
+}
+
+
+textarea.input100 {
+  min-height: 139px;
+  padding-top: 19px;
+  padding-bottom: 15px;
 }
 
 /*---------------------------------------------*/
@@ -332,7 +389,7 @@ input.input100 {
 
 /*------------------------------------------------------------------
 [ Button ]*/
-.container-login100-form-btn {
+.container-contact100-form-btn {
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -341,9 +398,10 @@ input.input100 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding-top: 23px;
 }
 
-.login100-form-btn {
+.contact100-form-btn {
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -352,9 +410,9 @@ input.input100 {
   justify-content: center;
   align-items: center;
   padding: 0 20px;
-  width: 100%;
+  min-width: 200px;
   height: 50px;
-  border-radius: 3px;
+  border-radius: 2px;
   background: #00ad5f;
 
   font-family: Montserrat-Bold;
@@ -370,7 +428,7 @@ input.input100 {
   transition: all 0.4s;
 }
 
-.login100-form-btn:hover {
+.contact100-form-btn:hover {
   background: #333333;
 }
 
@@ -380,32 +438,29 @@ input.input100 {
 [ Responsive ]*/
 
 @media (max-width: 992px) {
-  .login100-form {
+  .contact100-form {
     width: 60%;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding: 56px 30px 63px 30px;
   }
 
-  .login100-more {
+  .contact100-more {
     width: 40%;
   }
 }
 
 @media (max-width: 768px) {
-  .login100-form {
+  .contact100-form {
     width: 100%;
   }
 
-  .login100-more {
+  .contact100-more {
     width: 100%;
   }
 }
 
 @media (max-width: 576px) {
-  .login100-form {
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 150px;
+  .contact100-form {
+    padding: 56px 15px 63px 15px;
   }
 
   .rs1-wrap-input100,
@@ -415,6 +470,7 @@ input.input100 {
 
   .rs2-wrap-input100 {
     border-left: 1px solid #e6e6e6;
+    border-top: none;
   }
 }
 
@@ -440,7 +496,7 @@ input.input100 {
   -ms-transform: translateY(-50%);
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
-  right: 12px;
+  right: 2px;
   pointer-events: none;
 
   font-family: Poppins-Regular;
@@ -471,7 +527,7 @@ input.input100 {
   -ms-transform: translateY(-50%);
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
-  right: 18px;
+  right: 8px;
 }
 
 .alert-validate:hover:before {
