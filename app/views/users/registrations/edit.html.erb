@@ -2,68 +2,107 @@
 <!DOCTYPE html>
 <html>
 
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="container-contact100">
+    <div class="wrap-contact100">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "contact100-form validate-form", method: :put }) do |f| %>
+        <%= devise_error_messages! %>
+        <span class="contact100-form-title">
+          Edit User
+        </span>
+        <label class="label-input100" for="first-name">Name And Year</label>
+        <div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Type first name">
+          <%= f.text_field :firstName, id: :user_firstName, class: "input100", type:"text", placeholder: "First Name" %>
+          <span class="focus-input100"></span>
+        </div>
+        <div class="wrap-input100 rs2-wrap-input100 validate-input" data-validate="Type last name">
+          <%= f.text_field :lastName, id: :user_lastName, class: "input100", type:"text", placeholder: "Last Name" %>
+          <span class="focus-input100"></span>
+        </div>
+        <div class="wrap-input100 rs3-wrap-input100 validate-input" data-validate="Year">
+          <%= f.number_field :year, id: :user_year, class: "input100", min: 1, max: 4, placeholder: "Year" %>
+          <span class="focus-input100"></span>
+        </div>
+        <label class="label-input100" for="email">Email</label>
+        <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+          <%= f.email_field :email, autofocus: true, class: "input100", type:"text", autocomplete: "email", placeholder: "Email" %>
+          <span class="focus-input100"></span>
+        </div>
+        <label class="label-input100" for="password">Password&nbsp;<i>(leave blank if you don't want to change)</i></label>
+        <div class="wrap-input100">
+          <%= f.password_field :password, class: "input100", type: "password", autocomplete: "off", placeholder: "Password" %>
+          <span class="focus-input100"></span>
+        </div>
+        <label class="label-input100" for="password_confirmation">Confirm Password</label>
+        <div class="wrap-input100">
+          <%= f.password_field :password_confirmation, class: "input100", type: "password", autocomplete: "off", placeholder: "Confirm Password" %>
+          <span class="focus-input100"></span>
+        </div>
+        <label class="label-input100" for="password_confirmation">Current Password&nbsp;<i>(to confirm your changes)</i></label>
+        <div class="wrap-input100">
+          <%= f.password_field :password_confirmation, class: "input100", type: "password", autocomplete: "off", placeholder: "Confirm Password" %>
+          <span class="focus-input100"></span>
+        </div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
+        <label class="label-inputcheck">Are You A Manner? * <div class="slideThree"><%= f.check_box :manner, class: "slideThree", id: "slideThree" %><label for="slideThree"></label></div></label>
+        
+        <label class="label-inputcheck">Are You A Driver? * <div class="slideFour"><%= f.check_box :driver, class: "slideFour", id: "slideFour"%><label for="slideFour"></label></div></label>
+        
+        <div class="container-contact100-form-btn">
+            <%= f.submit "Update", class: "contact100-form-btn" %>
+        </div>
+      <% end %>
 
-  <div class="field">
-    <%= f.label :firstName %>
-    <%= f.text_field :firstName, autofocus: true, autocomplete: "firstName" %>
+<div class="contact100-more flex-col-c-m">
+        <div class="flex-w size1 p-b-47">
+          <div class="txt1 p-r-25">
+            <span class="lnr lnr-map-marker"></span>
+          </div>
+
+          <div class="flex-col size2">
+            <span class="txt1 p-b-20">
+              Address
+            </span>
+
+            <span class="txt3">
+              2518 Durant Ave, Berkeley, CA 94704
+            </span>
+          </div>
+        </div>
+
+        <div class="dis-flex size1 p-b-47">
+          <div class="txt1 p-r-25">
+            <span class="lnr lnr-phone-handset"></span>
+          </div>
+
+          <div class="flex-col size2">
+            <span class="txt1 p-b-20">
+              Lets Talk
+            </span>
+
+            <span class="txt3">
+              +1 800 123 4567
+            </span>
+          </div>
+        </div>
+
+        <div class="dis-flex size1 p-b-47">
+          <div class="txt1 p-r-25">
+            <span class="lnr lnr-envelope"></span>
+          </div>
+
+          <div class="flex-col size2">
+            <span class="txt1 p-b-20">
+              General Support
+            </span>
+
+            <span class="txt3">
+              contact@example.com
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :lastName %>
-    <%= f.text_field :lastName, autocomplete: "lastName" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :year %>
-    <%= f.number_field :year, autocomplete: "year" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :manner %>
-    <%= f.check_box :manner, autocomplete: "manner" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :Are_you_a_driver? %>
-    <%= f.check_box :driver %>
-  </div>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autocomplete: "email" %>
-  </div>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
 
 <h3>Cancel my account</h3>
 

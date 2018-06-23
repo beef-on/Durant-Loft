@@ -6,6 +6,7 @@
     <div class="container-login100">
       <div class="wrap-login100">
         <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "login100-form validate-form"}) do |f| %>
+          <%= devise_error_messages! %>
           <span class="login100-form-title p-b-34">
             Log in
           </span>
