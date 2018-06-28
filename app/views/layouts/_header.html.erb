@@ -17,7 +17,7 @@
 	     <% if user_signed_in? %>
 	      <% if current_user.manner or current_user.admin %>
 	        <%= link_to 'Shifts', shifts_path, class: "w3-bar-item w3-button" %>
-	        <a href="security" class="w3-bar-item w3-button">Security</a>
+	        <%= link_to 'Security', security_path, class: "w3-bar-item w3-button" %>
 	      <% end %>
 	    <% end %>
 
