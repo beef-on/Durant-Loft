@@ -2,22 +2,46 @@
 <!DOCTYPE html>
 <html>
 
-<h3> Hi friend! To create an event/meetup, please enter the following:</h3>
-<br>
-The event title, what the event is about, what time, and also if rides will be needed.
-</br>
-<%= form_for @event do |f| %>
-	<%=f.label :title %>
-	<%=f.text_field :title %> <br/>
-
-	<%=f.label :description %>
-	<%=f.text_area :description %> <br/>
-
-	<%=f.label :time %>
-	<%=f.text_field :time %> <br/>
-
-	<%= f.label :need_rides? %>
-	<%= f.check_box :need_rides %><br />
-
-	<%= f.submit %>
-<% end %>
+<div class="container-contact100">
+  <div class="wrap-contact100">
+    <%= form_for(@event, html: {class: "contact100-form validate-form"}) do |f| %>
+      <span class="contact100-form-title">
+        Create a Meetup!
+      </span>
+      <label class="label-inputcheck">Need Rides?<div class="slideThree"><%= f.check_box :need_rides, class: "slideThree", id: "slideThree" %><label for="slideThree"></label></div></label>
+			<label class="label-input100" for="time">Time</label>
+        <div class="wrap-input100">
+          <%= f.text_field :time, class: "input100", type: "time", autocomplete: "off", placeholder: "Time" %>
+          <span class="focus-input100"></span>
+        </div>
+      <label class="label-input100" for="title">Title</label>
+        <div class="wrap-input100">
+          <%= f.text_field :title, class: "input100", type: "text", autocomplete: "off", placeholder: "Title" %>
+          <span class="focus-input100"></span>
+        </div>
+      <label class="label-input100" for="description">Description</label>
+        <div class="wrap-input100">
+          <%= f.text_field :description, class: "input100", type: "textarea", autocomplete: "off", placeholder: "Description" %>
+          <span class="focus-input100"></span>
+        </div>
+      <div class="container-contact100-form-btn">
+        <%= f.submit "Create", class: "contact100-form-btn" %>
+      </div>
+    <% end %>
+    <div class="contact100-more flex-col-c-m">
+      <div class="flex-w size1 p-b-47">
+        <div class="txt1 p-r-25">
+          <span class="lnr lnr-map-marker"></span>
+        </div>
+        <div class="flex-col size2">
+          <span class="contact100-form-title">
+            <font color="#fff">Hi friend! To create an event/meetup, please enter the following:</font>
+          </span>
+          <span class="txt1 p-b-20">
+            <center>The event title, what the event is about, what time, and also if rides will be needed.</center>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
